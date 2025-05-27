@@ -6,8 +6,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info, MessageCircleQuestion } from 'lucide-react';
+import { Info, Sparkles } from 'lucide-react'; // Changed MessageCircleQuestion to Sparkles
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { generateFollowUpQuestions, GenerateFollowUpQuestionsInput } from '@/ai/flows/generate-follow-up-questions'; // Uncommented
 
 interface QuestionPageProps {
   params: { categorySlug: string; questionId: string };
@@ -34,18 +35,17 @@ export async function generateStaticParams() {
   return paths;
 }
 
-// Example of how to use the AI flow, can be uncommented and integrated
-// import { generateFollowUpQuestions, GenerateFollowUpQuestionsInput } from '@/ai/flows/generate-follow-up-questions';
-// async function getFollowUpQuestions(questionText: string, answerText: string) {
-//   try {
-//     const input: GenerateFollowUpQuestionsInput = { question: questionText, answer: answerText };
-//     const result = await generateFollowUpQuestions(input);
-//     return result.followUpQuestions;
-//   } catch (error) {
-//     console.error("Error generating follow-up questions:", error);
-//     return [];
-//   }
-// }
+// Uncommented and integrated
+async function getFollowUpQuestions(questionText: string, answerText: string) {
+  try {
+    const input: GenerateFollowUpQuestionsInput = { question: questionText, answer: answerText };
+    const result = await generateFollowUpQuestions(input);
+    return result.followUpQuestions;
+  } catch (error) {
+    console.error("Error generating follow-up questions:", error);
+    return [];
+  }
+}
 
 export default async function QuestionPage({ params }: QuestionPageProps) {
   const question = getQuestionById(params.questionId);
@@ -68,7 +68,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     );
   }
 
-  // const followUpQuestionsList = await getFollowUpQuestions(question.question, question.answer);
+  const followUpQuestionsList = await getFollowUpQuestions(question.question, question.answer); // Uncommented
 
   return (
     <div className="space-y-8">
@@ -81,26 +81,26 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
       />
       <QuestionDisplay question={question} />
 
-      {/* Placeholder for GenAI Follow-up Questions - can be styled better */}
-      {/* {followUpQuestionsList && followUpQuestionsList.length > 0 && (
-        <Card className="mt-8 bg-secondary/50">
-          <CardHeader>
-            <CardTitle className="text-xl flex items-center">
-              <MessageCircleQuestion className="h-5 w-5 mr-2 text-primary" />
+      {/* GenAI Follow-up Questions section enabled */}
+      {followUpQuestionsList && followUpQuestionsList.length > 0 && (
+        <Card className="mt-8 bg-secondary/50 rounded-lg shadow-md">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-xl flex items-center font-semibold">
+              <Sparkles className="h-5 w-5 mr-2.5 text-primary" /> {/* Icon changed to Sparkles and styling adjusted */}
               Further Questions You Might Have
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside space-y-2 text-sm text-foreground/90">
+          <CardContent className="pt-2">
+            <ul className="list-disc list-outside pl-5 space-y-2 text-sm text-foreground/90">
               {followUpQuestionsList.map((fq, index) => (
-                <li key={index} className="hover:text-primary transition-colors">
+                <li key={index} className="hover:text-primary transition-colors cursor-pointer"> {/* Added cursor-pointer for interactivity hint */}
                   {fq}
                 </li>
               ))}
             </ul>
           </CardContent>
         </Card>
-      )} */}
+      )}
 
       <div className="mt-10 text-center">
         <Button asChild variant="outline">
