@@ -1,3 +1,4 @@
+
 import type { FAQQuestion } from '@/types';
 import { categories as allDefinedCategories } from './categories';
 
@@ -15,6 +16,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-10-01").toISOString(),
+    averageRating: 4.7,
+    ratingCount: 152,
   },
   {
     id: generateId(),
@@ -25,6 +28,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-10-02").toISOString(),
+    averageRating: 4.5,
+    ratingCount: 98,
   },
   {
     id: generateId(),
@@ -36,6 +41,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-10-05").toISOString(),
+    averageRating: 4.2,
+    ratingCount: 75,
   },
   {
     id: generateId(),
@@ -47,6 +54,7 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-10-06").toISOString(),
+    // No rating data for this one to show how it handles missing data
   },
   {
     id: generateId(),
@@ -57,6 +65,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-09-15").toISOString(),
+    averageRating: 4.0,
+    ratingCount: 110,
   },
   {
     id: generateId(),
@@ -77,6 +87,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: true,
     priority: 1,
     last_updated: new Date("2023-09-25").toISOString(),
+    averageRating: 3.8,
+    ratingCount: 45,
   },
   {
     id: generateId(),
@@ -87,6 +99,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: false,
     priority: 1,
     last_updated: new Date("2023-09-10").toISOString(),
+    averageRating: 4.9,
+    ratingCount: 230,
   },
   {
     id: generateId(),
@@ -107,6 +121,8 @@ export const questions: FAQQuestion[] = [
     provider_specific: true,
     priority: 1,
     last_updated: new Date("2023-09-01").toISOString(),
+    averageRating: 4.3,
+    ratingCount: 60,
   }
 ];
 

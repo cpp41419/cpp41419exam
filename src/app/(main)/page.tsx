@@ -1,10 +1,12 @@
+
 import { categories } from '@/data/categories';
 import { CategoryCard } from '@/components/qa/CategoryCard';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'CPP41419 Q&A Home',
-  description: 'Find answers to your questions about CPP41419 Certificate IV in Real Estate Practice.',
+  description: 'Your comprehensive, authoritative guide to the Certificate IV in Real Estate Practice. Navigate through categories to find factual answers and actionable next steps.',
+  keywords: ['CPP41419', 'Certificate IV', 'Real Estate Practice', 'Real Estate Course', 'Real Estate Licensing', 'Australia Property Education', 'FAQ'],
 };
 
 export default function HomePage() {

@@ -1,3 +1,4 @@
+
 export interface FAQQuestion {
   id: string; // UUID
   question: string;
@@ -10,6 +11,8 @@ export interface FAQQuestion {
   priority: number;
   last_updated: string; // ISO date string
   schema_markup?: Record<string, any>; // For JSONB
+  averageRating?: number; // e.g., 4.5 (scale of 0-5)
+  ratingCount?: number; // e.g., 120
 }
 
 export interface Category {

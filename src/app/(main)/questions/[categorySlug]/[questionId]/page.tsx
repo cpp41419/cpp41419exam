@@ -1,3 +1,4 @@
+
 import { getQuestionById, getQuestionsByCategory } from '@/data/questions';
 import { categories }  from '@/data/categories';
 import { QuestionDisplay } from '@/components/qa/QuestionDisplay';
@@ -6,9 +7,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info, Sparkles } from 'lucide-react'; // Changed MessageCircleQuestion to Sparkles
+import { Info, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { generateFollowUpQuestions, GenerateFollowUpQuestionsInput } from '@/ai/flows/generate-follow-up-questions'; // Uncommented
+import { generateFollowUpQuestions, GenerateFollowUpQuestionsInput } from '@/ai/flows/generate-follow-up-questions';
 
 interface QuestionPageProps {
   params: { categorySlug: string; questionId: string };
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }: QuestionPageProps): Promise<M
   const question = getQuestionById(params.questionId);
   const title = question ? `${question.question.substring(0, 60)}... | CPP41419 Q&A` : 'Question | CPP41419 Q&A';
   const description = question ? question.answer.substring(0, 150) + '...' : 'View question and answer details for CPP41419.';
-  return { title, description };
+  const keywords = question ? question.keywords.join(', ') : 'real estate question, cpp41419 details';
+  return { title, description, keywords };
 }
 
 export async function generateStaticParams() {
@@ -35,7 +37,6 @@ export async function generateStaticParams() {
   return paths;
 }
 
-// Uncommented and integrated
 async function getFollowUpQuestions(questionText: string, answerText: string) {
   try {
     const input: GenerateFollowUpQuestionsInput = { question: questionText, answer: answerText };
@@ -68,7 +69,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     );
   }
 
-  const followUpQuestionsList = await getFollowUpQuestions(question.question, question.answer); // Uncommented
+  const followUpQuestionsList = await getFollowUpQuestions(question.question, question.answer);
 
   return (
     <div className="space-y-8">
@@ -81,19 +82,18 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
       />
       <QuestionDisplay question={question} />
 
-      {/* GenAI Follow-up Questions section enabled */}
       {followUpQuestionsList && followUpQuestionsList.length > 0 && (
         <Card className="mt-8 bg-secondary/50 rounded-lg shadow-md">
           <CardHeader className="pb-4">
             <CardTitle className="text-xl flex items-center font-semibold">
-              <Sparkles className="h-5 w-5 mr-2.5 text-primary" /> {/* Icon changed to Sparkles and styling adjusted */}
+              <Sparkles className="h-5 w-5 mr-2.5 text-primary" />
               Further Questions You Might Have
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-2">
             <ul className="list-disc list-outside pl-5 space-y-2 text-sm text-foreground/90">
               {followUpQuestionsList.map((fq, index) => (
-                <li key={index} className="hover:text-primary transition-colors cursor-pointer"> {/* Added cursor-pointer for interactivity hint */}
+                <li key={index} className="hover:text-primary transition-colors cursor-pointer">
                   {fq}
                 </li>
               ))}

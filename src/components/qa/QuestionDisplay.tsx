@@ -1,8 +1,10 @@
+
 import type { FAQQuestion } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CalendarDays, Tag, MapPin, Briefcase } from 'lucide-react';
 import { format } from 'date-fns';
+import { StarRating } from '@/components/core/StarRating'; // Added import
 
 interface QuestionDisplayProps {
   question: FAQQuestion;
@@ -13,15 +15,26 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
     <Card className="shadow-lg rounded-lg">
       <CardHeader className="pb-4">
         <CardTitle className="text-2xl md:text-3xl font-semibold text-foreground">{question.question}</CardTitle>
-        {question.last_updated && (
-           <CardDescription className="flex items-center text-xs text-muted-foreground pt-2">
-             <CalendarDays className="h-3.5 w-3.5 mr-1.5" />
-             Last updated: {format(new Date(question.last_updated), "MMMM d, yyyy")}
-           </CardDescription>
-        )}
+        
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-2">
+          {question.last_updated && (
+             <CardDescription className="flex items-center text-xs text-muted-foreground">
+               <CalendarDays className="h-3.5 w-3.5 mr-1.5" />
+               Last updated: {format(new Date(question.last_updated), "MMMM d, yyyy")}
+             </CardDescription>
+          )}
+          {question.averageRating !== undefined && question.averageRating > 0 && (
+            <StarRating 
+              rating={question.averageRating} 
+              ratingCount={question.ratingCount}
+              size={4} 
+              className="text-xs sm:ml-auto" 
+            />
+          )}
+        </div>
       </CardHeader>
       <CardContent className="space-y-4 text-foreground/90 leading-relaxed text-base py-6">
-        {question.answer.split('\\n').map((paragraph, index) => ( // Split by literal \n if that's in the data
+        {question.answer.split('\\n').map((paragraph, index) => (
           paragraph.trim() && <p key={index}>{paragraph}</p>
         ))}
       </CardContent>
