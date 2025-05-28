@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +9,7 @@ import {
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Home } from 'lucide-react';
+import { Home, BarChartBig } from 'lucide-react'; // Added BarChartBig
 
 export function SidebarNavigation() {
   const pathname = usePathname();
@@ -29,6 +30,22 @@ export function SidebarNavigation() {
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>
+
+        {/* Data Insights Link */}
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === '/data-insights'}
+            className="w-full justify-start"
+            tooltip="Data Insights"
+          >
+            <Link href="/data-insights">
+              <BarChartBig className="mr-2 h-4 w-4" />
+              <span>Data Insights</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+
         {categories.map((category) => {
           const href = `/questions/${category.slug}`;
           const isActive = pathname === href || pathname.startsWith(`${href}/`);
