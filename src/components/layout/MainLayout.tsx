@@ -14,6 +14,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
+import { ScrollProgressBar } from '@/components/core/ScrollProgressBar'; // Added
+import { Fab } from '@/components/core/Fab'; // Added
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -22,15 +24,16 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
   return (
     <SidebarProvider defaultOpen>
+      <ScrollProgressBar /> {/* Added */}
       <Sidebar>
-        <SidebarHeader className="p-4 border-b"> {/* Added padding and border */}
+        <SidebarHeader className="p-4 border-b">
           <AppLogo />
         </SidebarHeader>
-        <SidebarContent className="p-0"> {/* Removed default padding for ScrollArea */}
+        <SidebarContent className="p-0">
           <SidebarNavigation />
         </SidebarContent>
         <SidebarFooter className="p-4 border-t">
-            <Button variant="outline" size="sm" className="w-full" asChild>
+            <Button variant="outline" size="sm" className="w-full rounded-full" asChild>
                 <Link href="https://firebase.google.com/docs/app-hosting" target="_blank" rel="noopener noreferrer">
                     Powered by Firebase <ExternalLink className="ml-2 h-3 w-3" />
                 </Link>
@@ -46,6 +49,7 @@ export function MainLayout({ children }: MainLayoutProps) {
           {children}
         </main>
         <Toaster />
+        <Fab /> {/* Added */}
       </SidebarInset>
     </SidebarProvider>
   );
