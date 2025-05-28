@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Home, BarChartBig } from 'lucide-react'; // Added BarChartBig
+import { Home, BarChartBig, BookText } from 'lucide-react'; // Added BarChartBig and BookText
 
 export function SidebarNavigation() {
   const pathname = usePathname();
@@ -46,6 +46,22 @@ export function SidebarNavigation() {
           </SidebarMenuButton>
         </SidebarMenuItem>
 
+        {/* Comprehensive Guide Link */}
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === '/guide'}
+            className="w-full justify-start"
+            tooltip="Comprehensive Guide"
+          >
+            <Link href="/guide">
+              <BookText className="mr-2 h-4 w-4" />
+              <span>Comprehensive Guide</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+
+
         {categories.map((category) => {
           const href = `/questions/${category.slug}`;
           const isActive = pathname === href || pathname.startsWith(`${href}/`);
@@ -69,3 +85,5 @@ export function SidebarNavigation() {
     </ScrollArea>
   );
 }
+
+    
