@@ -102,13 +102,13 @@ export default function ComprehensiveGuidePage() {
         </CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="abstract" title="Navigation Hub">
-            This comprehensive guide covers everything you need to know about CPP41419 across Australia. Use the sections below to jump to specific topics (Note: In-page navigation not yet active):
+            This comprehensive guide covers everything you need to know about CPP41419 across Australia. Use the sections below to jump to specific topics:
             <ul className="list-disc pl-5 mt-2">
-              <li>Course History</li>
-              <li>State Requirements</li>
-              <li>Cost Breakdown</li>
-              <li>Provider Selection</li>
-              <li>Career Outcomes</li>
+              <li><Link href="#course-history" className="text-primary hover:underline">Course History</Link></li>
+              <li><Link href="#state-requirements" className="text-primary hover:underline">State Requirements</Link></li>
+              <li><Link href="#cost-breakdown" className="text-primary hover:underline">Cost Breakdown</Link></li>
+              <li><Link href="#provider-selection" className="text-primary hover:underline">Provider Selection</Link></li>
+              <li><Link href="#career-outcomes" className="text-primary hover:underline">Career Outcomes</Link></li>
             </ul>
           </SpecialBlock>
           <p>Whether you're considering a career change, just finishing school, or looking to upgrade your qualifications, this guide provides everything you need to make informed decisions about your real estate education journey.</p>
@@ -118,7 +118,7 @@ export default function ComprehensiveGuidePage() {
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="course-history">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Clock className="mr-2 h-6 w-6 text-primary" /> Course History and Evolution</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="timeline" title="CPP41419 Development">
@@ -183,7 +183,7 @@ timeline
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="course-overview"> {/* Assuming this is the target for "Course Overview" or similar if needed */}
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><BookOpen className="mr-2 h-6 w-6 text-primary" /> Course Overview</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="info" title="National Recognition">
@@ -244,7 +244,7 @@ graph LR
         </CardContent>
       </Card>
       
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="state-requirements">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><BarChart2 className="mr-2 h-6 w-6 text-primary" /> State-by-State Licensing Summary</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="abstract" title="Navigation Map (State Guides)">
@@ -367,7 +367,7 @@ graph LR
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="cost-breakdown">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><DollarSign className="mr-2 h-6 w-6 text-primary" /> Cost Analysis Across Australia</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="tip" title="Budget Planning">
@@ -420,7 +420,7 @@ graph TD
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="provider-selection">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Users className="mr-2 h-6 w-6 text-primary" /> Provider Comparison Framework</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="abstract" title="Decision Matrix">
@@ -461,7 +461,7 @@ Schedule       Study Materials    Licensing Support
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="career-outcomes">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Briefcase className="mr-2 h-6 w-6 text-primary" /> Career Pathways and Opportunities</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
            <SpecialBlock type="abstract" title="Career Progression Map">
@@ -520,7 +520,7 @@ graph TD
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="industry-outlook">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><TrendingUp className="mr-2 h-6 w-6 text-primary" /> Industry Outlook and Future Trends</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
             <SpecialBlock type="abstract" title="Market Intelligence">
@@ -551,7 +551,7 @@ Growth Indicators:
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="getting-started">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Award className="mr-2 h-6 w-6 text-primary" /> Getting Started: Your Next Steps</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
            <SpecialBlock type="abstract" title="Action Plan">
@@ -592,7 +592,7 @@ graph LR
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="faq-guide">
         <CardHeader><CardTitle className="text-2xl font-semibold">Frequently Asked Questions (Guide Specific)</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="question" title="Can I practice in multiple states with one qualification?">
@@ -613,7 +613,7 @@ graph LR
         </CardContent>
       </Card>
       
-      <Card className="shadow-lg rounded-xl">
+      <Card className="shadow-lg rounded-xl" id="related-resources">
         <CardHeader><CardTitle className="text-2xl font-semibold">Related Resources & Citations</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
             <SpecialBlock type="abstract" title="Related Resources">

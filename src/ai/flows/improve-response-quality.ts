@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -45,21 +46,15 @@ const prompt = ai.definePrompt({
 
   Perform the following checks:
 
-  1. Accuracy Validation: Verify the accuracy of the information provided in the initial answer. Identify any factual errors or inconsistencies.
-  2. Content Moderation: Ensure the answer is appropriate, unbiased, and free from harmful content.
+  1.  Accuracy Validation: Verify the accuracy of the information provided in the initial answer. Identify any factual errors or inconsistencies.
+  2.  Content Moderation: Ensure the answer is appropriate, unbiased, and free from harmful content.
 
-  Based on these checks, revise the answer to improve its quality. Provide a summary of the accuracy validation and content moderation checks performed.
+  Based on these checks, provide:
+  - The revised answer.
+  - A summary of the accuracy validation checks performed.
+  - A summary of the content moderation checks performed.
 
-  Output the revised answer, accuracy validation summary, and content moderation summary in the specified format.
-
-  Revised Answer:
-  {{revisedAnswer}}
-
-  Accuracy Validation Summary:
-  {{accuracyValidation}}
-
-  Content Moderation Summary:
-  {{contentModeration}}`,
+  Please structure your response clearly, outputting the revised answer, accuracy validation summary, and content moderation summary.`,
 });
 
 const improveResponseQualityFlow = ai.defineFlow(

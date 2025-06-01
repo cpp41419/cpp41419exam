@@ -1,4 +1,4 @@
-// src/ai/flows/generate-follow-up-questions.ts
+
 'use server';
 /**
  * @fileOverview A flow for generating follow-up questions based on an initial question and answer.
@@ -30,13 +30,12 @@ const prompt = ai.definePrompt({
   name: 'generateFollowUpQuestionsPrompt',
   input: {schema: GenerateFollowUpQuestionsInputSchema},
   output: {schema: GenerateFollowUpQuestionsOutputSchema},
-  prompt: `Given the following question and answer, generate a list of follow-up questions that the user might be interested in.
+  prompt: `Given the following question and answer, generate a list of 3 to 5 relevant follow-up questions that a user might ask to explore the topic further. Ensure the questions are distinct and encourage deeper understanding.
 
 Question: {{{question}}}
 Answer: {{{answer}}}
 
-Follow-up Questions:
-{{#each followUpQuestions}}- {{{this}}}\n{{/each}}`,
+Please provide the follow-up questions in a list format, with each question as a separate item.`,
 });
 
 const generateFollowUpQuestionsFlow = ai.defineFlow(
