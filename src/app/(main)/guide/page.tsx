@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Breadcrumbs } from '@/components/core/Breadcrumbs';
 import { CheckCircle, Info, AlertTriangle, XCircle, BookOpen, Clock, DollarSign, Award, BarChart2, Users, Briefcase, TrendingUp, PlayCircle } from 'lucide-react';
+import MermaidDiagram from '@/components/core/MermaidDiagram'; // Import the new component
 
 export const metadata: Metadata = {
   title: 'CPP41419 Certificate IV - Complete Australian Guide | CPP41419 Q&A',
@@ -28,11 +29,11 @@ const SpecialBlock: React.FC<SpecialBlockProps> = ({ type, title, children }) =>
     case 'info': IconComponent = Info; break;
     case 'timeline': IconComponent = Clock; break;
     case 'example': IconComponent = PlayCircle; break;
-    case 'tip': IconComponent = CheckCircle; alertVariant = "default"; break; // Tip could be success-like
-    case 'warning': IconComponent = AlertTriangle; alertVariant = "default"; break; // Default styling for warning, not destructive
+    case 'tip': IconComponent = CheckCircle; alertVariant = "default"; break; 
+    case 'warning': IconComponent = AlertTriangle; alertVariant = "default"; break; 
     case 'important': IconComponent = AlertTriangle; break;
     case 'check': IconComponent = CheckCircle; break;
-    case 'question': IconComponent = Info; break; // Using Info for question
+    case 'question': IconComponent = Info; break; 
     case 'note': IconComponent = Info; break;
     case 'success': IconComponent = CheckCircle; break;
     default: IconComponent = Info;
@@ -46,14 +47,6 @@ const SpecialBlock: React.FC<SpecialBlockProps> = ({ type, title, children }) =>
     </Alert>
   );
 };
-
-const MermaidDiagram: React.FC<{ title?: string; code: string }> = ({ title, code }) => (
-  <div className="my-4 p-4 bg-muted rounded-lg overflow-x-auto">
-    {title && <h4 className="font-semibold mb-2 text-sm text-muted-foreground">{title}</h4>}
-    <pre className="text-sm"><code>{code.trim()}</code></pre>
-    <p className="text-xs text-muted-foreground mt-1">(Mermaid diagram presented as code. Dynamic rendering can be added later.)</p>
-  </div>
-);
 
 const DataTable: React.FC<{ headers: string[], rows: string[][] }> = ({ headers, rows }) => (
   <div className="my-4 overflow-x-auto">
@@ -105,10 +98,15 @@ export default function ComprehensiveGuidePage() {
             This comprehensive guide covers everything you need to know about CPP41419 across Australia. Use the sections below to jump to specific topics:
             <ul className="list-disc pl-5 mt-2">
               <li><Link href="#course-history" className="text-primary hover:underline">Course History</Link></li>
+              <li><Link href="#course-overview" className="text-primary hover:underline">Course Overview</Link></li>
               <li><Link href="#state-requirements" className="text-primary hover:underline">State Requirements</Link></li>
               <li><Link href="#cost-breakdown" className="text-primary hover:underline">Cost Breakdown</Link></li>
               <li><Link href="#provider-selection" className="text-primary hover:underline">Provider Selection</Link></li>
               <li><Link href="#career-outcomes" className="text-primary hover:underline">Career Outcomes</Link></li>
+              <li><Link href="#industry-outlook" className="text-primary hover:underline">Industry Outlook</Link></li>
+              <li><Link href="#getting-started" className="text-primary hover:underline">Getting Started</Link></li>
+              <li><Link href="#faq-guide" className="text-primary hover:underline">FAQ</Link></li>
+              <li><Link href="#related-resources" className="text-primary hover:underline">Related Resources</Link></li>
             </ul>
           </SpecialBlock>
           <p>Whether you're considering a career change, just finishing school, or looking to upgrade your qualifications, this guide provides everything you need to make informed decisions about your real estate education journey.</p>
@@ -129,7 +127,10 @@ export default function ComprehensiveGuidePage() {
           <p>The CPP41419 Certificate IV in Real Estate Practice represents the latest iteration of Australia's nationally recognized real estate qualification, introduced in 2019 to replace the outdated CPP40307. This evolution reflected the industry's need for modern practitioners equipped with digital skills, enhanced ethical frameworks, and contemporary compliance knowledge.</p>
           
           <h3>Key Historical Milestones</h3>
-          <MermaidDiagram title="CPP41419 Evolution Timeline" code={`
+          <MermaidDiagram 
+            id="cpp41419-evolution-timeline"
+            title="CPP41419 Evolution Timeline" 
+            code={`
 timeline
     title CPP41419 Evolution Timeline
     2001 : CPP40307 Introduced
@@ -183,7 +184,7 @@ timeline
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg rounded-xl" id="course-overview"> {/* Assuming this is the target for "Course Overview" or similar if needed */}
+      <Card className="shadow-lg rounded-xl" id="course-overview">
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><BookOpen className="mr-2 h-6 w-6 text-primary" /> Course Overview</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
           <SpecialBlock type="info" title="National Recognition">
@@ -217,7 +218,10 @@ timeline
              <strong>Assessment</strong>: Project-based assignments (no exams)
           </SpecialBlock>
           <h4>Core Units (Mandatory for All Students)</h4>
-          <MermaidDiagram title="Core Unit Map" code={`
+          <MermaidDiagram 
+            id="core-unit-map"
+            title="Core Unit Map" 
+            code={`
 graph LR
     A[CPPREP4001<br/>Professional Practice] --> B[CPPREP4002<br/>Ethical Practice]
     B --> C[CPPREP4003<br/>Legislation]
@@ -299,7 +303,6 @@ graph LR
             <Link href="https://cpp41419.com.au/compare/vic" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">VIC Provider Comparison</Link>
           </SpecialBlock>
 
-          {/* ... Repeat for QLD, WA, SA, TAS, ACT, NT similarly ... */}
            <h4>QLD - Registration to Salesperson</h4>
           <SpecialBlock type="tip" title="QLD Pathway">
             <ul className="list-disc pl-5">
@@ -394,7 +397,9 @@ Provider Types by Cost Range:
           />
           <h3>Additional Licensing Costs</h3>
           <SpecialBlock type="warning" title="Hidden Costs Alert">
-            <MermaidDiagram code={`
+            <MermaidDiagram 
+              id="hidden-costs-alert-diagram"
+              code={`
 graph TD
     A[Course Fees] --> B[Criminal Check $45-$56]
     B --> C[License Application $145-$675]
@@ -465,7 +470,9 @@ Schedule       Study Materials    Licensing Support
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Briefcase className="mr-2 h-6 w-6 text-primary" /> Career Pathways and Opportunities</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
            <SpecialBlock type="abstract" title="Career Progression Map">
-            <MermaidDiagram code={`
+            <MermaidDiagram 
+              id="career-progression-map"
+              code={`
 graph TD
     A[CPP41419 Completion] --> B[Entry-Level Positions]
     B --> C[Sales Agent $50-70k]
@@ -555,7 +562,9 @@ Growth Indicators:
         <CardHeader><CardTitle className="text-2xl font-semibold flex items-center"><Award className="mr-2 h-6 w-6 text-primary" /> Getting Started: Your Next Steps</CardTitle></CardHeader>
         <CardContent className="space-y-4 prose max-w-none dark:prose-invert">
            <SpecialBlock type="abstract" title="Action Plan">
-            <MermaidDiagram code={`
+            <MermaidDiagram 
+              id="action-plan-diagram"
+              code={`
 graph LR
     A[1. Choose State] --> B[2. Select Provider]
     B --> C[3. Check Subsidies]
@@ -659,5 +668,3 @@ graph LR
     </div>
   );
 }
-
-    
