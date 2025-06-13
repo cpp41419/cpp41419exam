@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Home, BarChartBig, BookText, Landmark } from 'lucide-react'; // Added Landmark
+import { Home, BarChartBig, BookText, Landmark, Rss } from 'lucide-react'; // Added Landmark and Rss
 
 export function SidebarNavigation() {
   const pathname = usePathname();
@@ -72,6 +72,21 @@ export function SidebarNavigation() {
             <Link href="/regional-guide">
               <Landmark className="mr-2 h-4 w-4" />
               <span>Regional Guide</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+
+        {/* Popular Blogs Link */}
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === '/popular-blogs'}
+            className="w-full justify-start"
+            tooltip="Popular Blogs"
+          >
+            <Link href="/popular-blogs">
+              <Rss className="mr-2 h-4 w-4" />
+              <span>Popular Blogs</span>
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>
