@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
 } from '@/components/ui/sidebar';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Home, BarChartBig, BookText } from 'lucide-react'; // Added BarChartBig and BookText
+import { Home, BarChartBig, BookText, Landmark } from 'lucide-react'; // Added Landmark
 
 export function SidebarNavigation() {
   const pathname = usePathname();
@@ -61,6 +61,21 @@ export function SidebarNavigation() {
           </SidebarMenuButton>
         </SidebarMenuItem>
 
+        {/* Regional Guide Link */}
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === '/regional-guide'}
+            className="w-full justify-start"
+            tooltip="Regional Real Estate Guide"
+          >
+            <Link href="/regional-guide">
+              <Landmark className="mr-2 h-4 w-4" />
+              <span>Regional Guide</span>
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+
 
         {categories.map((category) => {
           const href = `/questions/${category.slug}`;
@@ -85,5 +100,7 @@ export function SidebarNavigation() {
     </ScrollArea>
   );
 }
+
+    
 
     
