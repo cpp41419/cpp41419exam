@@ -8,92 +8,102 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Very Light Gray / Almost White */
-    --foreground: 0 0% 20%; /* Dark Gray (#333333) */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 20%; /* Dark Gray */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --background: 210 17% 98%; /* Background Gray: #f9fafb */
+    --foreground: 215 16% 27%; /* Charcoal: #374151 */
     
-    --primary: 16 100% 60%; /* Bright Orange/Coral (#FF6B35) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 215 16% 27%; /* Charcoal */
+    
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 215 16% 27%; /* Charcoal */
+    
+    --primary: 221 83% 53%; /* Professional Blue: #2563eb */
     --primary-foreground: 0 0% 100%; /* White */
     
-    --secondary: 210 100% 35%; /* Medium Blue (#0056b3) */
+    --secondary: 217 91% 60%; /* Bright Blue: #3b82f6 */
     --secondary-foreground: 0 0% 100%; /* White */
     
-    --muted: 220 15% 88%; /* Light Gray */
-    --muted-foreground: 0 0% 40%; /* Medium Gray (#666666) */
+    --muted: 220 14% 93%; /* Light Gray: #e5e7eb */
+    --muted-foreground: 210 10% 46%; /* Medium Gray: #6b7280 */
     
-    --accent: 179 70% 48%; /* Teal/Cyan (#26D0CE) */
+    --accent: 26 95% 53%; /* Orange Accent: #f97316 */
     --accent-foreground: 0 0% 100%; /* White */
     
-    --destructive: 0 100% 40%; /* Red (#cc0000) */
-    --destructive-foreground: 0 0% 98%; /* White */
+    --destructive: 0 70% 50%; /* Warning Red: #dc2626 */
+    --destructive-foreground: 0 0% 100%; /* White */
     
-    --border: 220 15% 90%; /* Light Gray Border */
-    --input: 220 15% 90%; /* Light Gray Input Background */
-    --ring: 16 100% 60%; /* Primary Orange for focus rings */
+    --border: 220 14% 93%; /* Light Gray: #e5e7eb */
+    --input: 220 14% 93%; /* Light Gray: #e5e7eb */
+    --ring: 221 83% 53%; /* Professional Blue: #2563eb */
 
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.75rem; /* Increased for more rounded look */
+    --deep-navy: 225 63% 32%; /* Deep Navy: #1e3a8a */
+    --success-green: 159 90% 31%; /* Success Green: #059669 */
 
-    /* Sidebar specific theme */
-    --sidebar-background: 210 20% 98%; 
-    --sidebar-foreground: 0 0% 20%; 
-    --sidebar-primary: 16 100% 60%; 
+    --chart-1: 221 83% 53%; /* Professional Blue */
+    --chart-2: 26 95% 53%; /* Orange Accent */
+    --chart-3: 159 90% 31%; /* Success Green */
+    --chart-4: 217 91% 60%; /* Bright Blue */
+    --chart-5: 210 10% 46%; /* Medium Gray */
+    --radius: 0.75rem;
+
+    /* Sidebar specific theme - aligned with main theme */
+    --sidebar-background: 210 17% 98%; 
+    --sidebar-foreground: 215 16% 27%; 
+    --sidebar-primary: 221 83% 53%; 
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 179 70% 92%; 
-    --sidebar-accent-foreground: 179 70% 30%;
-    --sidebar-border: 210 20% 90%; 
-    --sidebar-ring: 16 100% 60%;
+    --sidebar-accent: 220 14% 88%; /* Lighter accent for sidebar hover */
+    --sidebar-accent-foreground: 215 16% 27%; /* Charcoal for text on accent */
+    --sidebar-border: 220 14% 90%; 
+    --sidebar-ring: 221 83% 53%;
   }
 
   .dark {
-    --background: 210 30% 25%; /* Dark Slate Blue (#2C3E50) */
-    --foreground: 210 15% 95%; /* Light Gray/Off-White */
-    --card: 210 30% 28%; /* Slightly lighter dark slate */
-    --card-foreground: 210 15% 95%;
-    --popover: 210 30% 28%;
-    --popover-foreground: 210 15% 95%;
+    --background: 215 28% 17%; /* Dark Background #20293A */
+    --foreground: 220 14% 80%; /* Lighter Gray for text */
+    
+    --card: 215 28% 20%; /* Dark Card Background #263143 */
+    --card-foreground: 220 14% 80%;
+    
+    --popover: 215 28% 20%;
+    --popover-foreground: 220 14% 80%;
 
-    --primary: 16 100% 65%; /* Brighter Orange for dark mode */
-    --primary-foreground: 0 0% 10%; /* Dark text for contrast */
+    --primary: 221 83% 63%; /* Brighter Professional Blue */
+    --primary-foreground: 215 16% 15%; /* Darker text for contrast */
     
-    --secondary: 210 100% 60%; /* Brighter Blue */
-    --secondary-foreground: 0 0% 10%; /* Dark text */
+    --secondary: 217 91% 70%; /* Brighter Bright Blue */
+    --secondary-foreground: 215 16% 15%;
     
-    --muted: 220 15% 25%; /* Darker Gray */
-    --muted-foreground: 210 15% 65%; /* Lighter Gray */
+    --muted: 215 20% 25%; /* Darker Muted Background */
+    --muted-foreground: 210 10% 60%; /* Lighter Muted Foreground */
     
-    --accent: 179 70% 35%; /* Muted Teal/Cyan */
-    --accent-foreground: 210 20% 90%; /* Light color for text on accent */
+    --accent: 26 95% 63%; /* Brighter Orange Accent */
+    --accent-foreground: 215 16% 15%;
     
-    --destructive: 0 70% 50%; /* Dark mode red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 60%; /* Brighter Warning Red */
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 220 15% 25%; /* Dark Gray Border */
-    --input: 220 15% 25%; /* Dark Gray Input Background */
-    --ring: 16 100% 65%; /* Brighter Primary Orange for focus rings */
+    --border: 215 15% 30%; /* Darker Border */
+    --input: 215 15% 30%; /* Darker Input Background */
+    --ring: 221 83% 63%; /* Brighter Professional Blue for focus rings */
 
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --deep-navy: 225 63% 70%; /* Lighter Deep Navy for dark mode headings */
+    --success-green: 159 90% 50%; /* Brighter Success Green */
 
-    /* Dark Sidebar specific theme */
-    --sidebar-background: 210 30% 22%; 
-    --sidebar-foreground: 210 15% 88%;
-    --sidebar-primary: 16 100% 65%; 
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 179 70% 30%; 
-    --sidebar-accent-foreground: 210 15% 92%;
-    --sidebar-border: 210 15% 20%;
-    --sidebar-ring: 16 100% 65%;
+    --chart-1: 221 83% 63%;
+    --chart-2: 26 95% 63%;
+    --chart-3: 159 90% 50%;
+    --chart-4: 217 91% 70%;
+    --chart-5: 210 10% 60%;
+
+    /* Dark Sidebar specific theme - aligned with main dark theme */
+    --sidebar-background: 215 28% 15%; 
+    --sidebar-foreground: 220 14% 75%;
+    --sidebar-primary: 221 83% 63%; 
+    --sidebar-primary-foreground: 215 16% 15%;
+    --sidebar-accent: 215 20% 30%; 
+    --sidebar-accent-foreground: 220 14% 85%;
+    --sidebar-border: 215 15% 25%;
+    --sidebar-ring: 221 83% 63%;
   }
 }
 
@@ -102,7 +112,32 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1; /* Enable common ligatures */
+    @apply bg-background text-foreground text-base font-normal; /* 16px, font-weight 400, Charcoal */
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1 {
+    @apply text-3xl font-bold text-[hsl(var(--deep-navy))]; /* ~30px (Guide: 32px), Deep Navy */
+  }
+  h2 {
+    @apply text-2xl font-semibold text-[hsl(var(--deep-navy))]; /* 24px, Deep Navy */
+  }
+  h3 {
+    @apply text-xl font-semibold text-foreground; /* 20px, Charcoal */
+  }
+
+  a {
+    @apply text-primary; /* Professional Blue */
+  }
+  a:hover {
+    @apply underline;
+  }
+
+  /* Utility classes for secondary/small body text if needed explicitly elsewhere */
+  .text-secondary-body {
+    @apply text-sm font-normal text-muted-foreground; /* 14px, Medium Gray */
+  }
+  .text-small-body {
+    @apply text-xs font-normal text-muted-foreground; /* 12px, Medium Gray */
   }
 }
