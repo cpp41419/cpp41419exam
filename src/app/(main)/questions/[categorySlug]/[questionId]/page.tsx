@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info, Sparkles } from 'lucide-react';
+import { AlertCircle, Sparkles } from 'lucide-react'; // Changed Info to AlertCircle
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { generateFollowUpQuestions, GenerateFollowUpQuestionsInput } from '@/ai/flows/generate-follow-up-questions';
 
@@ -56,7 +56,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     return (
        <div className="text-center py-10">
          <Alert variant="destructive" className="max-w-md mx-auto">
-          <Info className="h-4 w-4" />
+          <AlertCircle className="h-4 w-4" /> {/* Changed Info to AlertCircle */}
           <AlertTitle>Content Not Found</AlertTitle>
           <AlertDescription>
             The question or category you are looking for does not exist or the URL is incorrect.

@@ -1,3 +1,4 @@
+
 import { getQuestionsByCategory } from '@/data/questions';
 import { categories } from '@/data/categories';
 import { QuestionListItem } from '@/components/qa/QuestionListItem';
@@ -6,7 +7,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info } from 'lucide-react';
+import { AlertCircle } from 'lucide-react'; // Changed Info to AlertCircle
 
 interface CategoryPageProps {
   params: { categorySlug: string };
@@ -33,7 +34,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     return (
       <div className="text-center py-10">
         <Alert variant="destructive" className="max-w-md mx-auto">
-          <Info className="h-4 w-4" />
+          <AlertCircle className="h-4 w-4" /> {/* Changed Info to AlertCircle */}
           <AlertTitle>Category Not Found</AlertTitle>
           <AlertDescription>
             The category you are looking for does not exist.
@@ -58,7 +59,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
       {questionsForCategory.length === 0 ? (
          <Alert>
-          <Info className="h-4 w-4" />
+          <AlertCircle className="h-4 w-4" /> {/* Changed Info to AlertCircle */}
           <AlertTitle>No Questions Yet</AlertTitle>
           <AlertDescription>
             There are no questions available in this category at the moment. Please check back later or explore other categories.
