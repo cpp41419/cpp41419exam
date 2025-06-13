@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Breadcrumbs } from '@/components/core/Breadcrumbs';
-import { CheckCircle, Info, AlertTriangle, XCircle, BookOpen, Clock, DollarSign, Award, BarChart2, Users, Briefcase, TrendingUp, PlayCircle } from 'lucide-react';
+import { CheckCircle, Info, AlertTriangle, XCircle, BookOpen, Clock, DollarSign, Award, BarChart2, Users, Briefcase, TrendingUp, PlayCircle, ShieldCheck, BookCopy } from 'lucide-react';
 import MermaidDiagram from '@/components/core/MermaidDiagram'; // Import the new component
 
 export const metadata: Metadata = {
@@ -210,6 +210,21 @@ timeline
 └─ Digital Communication Strategies
             </code></pre>
           </SpecialBlock>
+
+          <h3>National Standards and Accreditation</h3>
+            <SpecialBlock type="important" title="Ensuring Quality and Consistency">
+              The CPP41419 qualification adheres to strict national standards to ensure quality and consistency across Australia:
+              <ul className="list-disc pl-5 mt-2">
+                <li>
+                  <strong>ASQA (Australian Skills Quality Authority)</strong>: ASQA is the national regulator for Australia’s vocational education and training (VET) sector. Registered Training Organisations (RTOs) delivering CPP41419 must be registered with ASQA and meet rigorous standards related to training delivery, assessment practices, student support, and governance. This ensures that the qualification you receive is from a reputable provider meeting national quality benchmarks. (Source: <Link href="https://www.asqa.gov.au" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">asqa.gov.au</Link>)
+                </li>
+                <li>
+                  <strong>AQF Level 4 (Australian Qualifications Framework)</strong>: The Certificate IV in Real Estate Practice is an AQF Level 4 qualification. This signifies that graduates possess theoretical and practical knowledge and skills for specialized and/or skilled work and/or learning. AQF Level 4 qualifications prepare individuals to undertake skilled work, provide leadership and guidance to others, and solve a range of problems with some complexity. It indicates a capability to work independently and take responsibility for their own outputs in work and learning. (Source: <Link href="https://www.aqf.edu.au" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">aqf.edu.au</Link>)
+                </li>
+              </ul>
+              Understanding these frameworks helps confirm the credibility and standard of the CPP41419 qualification.
+            </SpecialBlock>
+
           <h3>Course Structure</h3>
           <SpecialBlock type="note" title="Unit Breakdown">
              <strong>Total Units</strong>: 18 (5 Core + 13 Electives) (Source: <Link href="https://cpp41419.com.au/course-structure" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/course-structure</Link>)<br/>
@@ -264,7 +279,7 @@ graph LR
               <li><Link href="https://cpp41419.com.au/nt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">NT - Remote Area Considerations</Link></li>
             </ul>
           </SpecialBlock>
-          <p>Each Australian state and territory has unique licensing pathways and requirements:</p>
+          <p>Each Australian state and territory has unique licensing pathways and requirements, primarily governed by state-specific legislation and regulatory bodies. While CPP41419 provides the foundational educational qualification, understanding these local nuances is critical for aspiring real estate professionals.</p>
           <SpecialBlock type="example" title="State Comparison Matrix">
             <pre className="text-sm p-2 bg-muted/50 rounded overflow-x-auto"><code>
 ┌─────────┬─────────────────┬─────────────────┬─────────────────┐
@@ -283,33 +298,40 @@ graph LR
           </SpecialBlock>
           
           <h4>NSW - Two-Step Progression</h4>
-          <SpecialBlock type="tip" title="NSW Pathway">
-            <ul className="list-disc pl-5">
-              <li><strong>Step 1</strong>: Certificate of Registration (4 core units)</li>
-              <li><strong>Step 2</strong>: Class 2 License (full CPP41419 + 12 months experience)</li>
-              <li><strong>Authority</strong>: NSW Fair Trading</li>
-              <li><strong>Unique Feature</strong>: Longest probationary period (Source: <Link href="https://cpp41419.com.au/nsw" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/nsw</Link>)</li>
+          <SpecialBlock type="tip" title="NSW Pathway Details">
+            <p>In New South Wales, the real estate licensing framework is overseen by <strong>NSW Fair Trading</strong>, operating under the <strong>Property and Stock Agents Act 2002</strong>. This legislation outlines the requirements for individuals wishing to work in the property industry, emphasizing consumer protection and professional standards.</p>
+            <ul className="list-disc pl-5 mt-2">
+              <li><strong>Regulatory Body</strong>: NSW Fair Trading is responsible for licensing, compliance, and dispute resolution in the real estate sector. They ensure agents adhere to ethical practices and legal obligations.</li>
+              <li><strong>Governing Legislation</strong>: The Property and Stock Agents Act 2002 (NSW) and its associated regulations dictate the conduct of real estate agents, including licensing, trust accounting, and agency agreements.</li>
+              <li><strong>Step 1 - Assistant Agent</strong>: To begin, aspiring agents must complete specific entry-level units from the CPP41419 qualification to obtain a Certificate of Registration. This allows them to work under the supervision of a licensed agent.</li>
+              <li><strong>Step 2 - Class 2 Agent License</strong>: After gaining 12 months of practical experience as an Assistant Agent and completing the full CPP41419 Certificate IV, individuals can apply for a Class 2 Real Estate Agent Licence. This allows for more independent practice.</li>
+              <li><strong>Unique Feature</strong>: NSW is known for having one of the longest structured probationary/assistant agent periods, designed to ensure comprehensive practical experience before full licensing. (Source: <Link href="https://cpp41419.com.au/nsw" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/nsw</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/nsw" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">NSW Provider Comparison</Link>
           </SpecialBlock>
 
           <h4>VIC - Agent's Representative Path</h4>
-          <SpecialBlock type="tip" title="VIC Pathway">
-            <ul className="list-disc pl-5">
-                <li><strong>Requirement</strong>: Full CPP41419 before licensing</li>
-                <li><strong>Authority</strong>: Consumer Affairs Victoria</li>
-                <li><strong>Unique Feature</strong>: 3-year license terms (Source: <Link href="https://cpp41419.com.au/vic" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/vic</Link>)</li>
+          <SpecialBlock type="tip" title="VIC Pathway Details">
+            <p>Victoria's real estate industry is regulated by <strong>Consumer Affairs Victoria (CAV)</strong>, with the primary legislative framework being the <strong>Estate Agents Act 1980</strong>. This Act sets out the rules for estate agency practice, licensing, and conduct.</p>
+            <ul className="list-disc pl-5 mt-2">
+                <li><strong>Regulatory Body</strong>: Consumer Affairs Victoria (CAV) manages the licensing of estate agents and Agent's Representatives, enforces industry standards, and provides information to consumers and industry professionals.</li>
+                <li><strong>Governing Legislation</strong>: The Estate Agents Act 1980 (VIC) and its regulations cover all aspects of real estate agency work, including qualifications, trust accounts, and professional conduct.</li>
+                <li><strong>Agent's Representative</strong>: To work in real estate sales or property management in Victoria, individuals must first become an Agent's Representative. This requires completion of the full CPP41419 Certificate IV in Real Estate Practice *before* applying for registration with CAV.</li>
+                <li><strong>Full Estate Agent Licence</strong>: To operate independently or manage an agency, an Agent's Representative needs to gain further experience and potentially complete additional qualifications (like a Diploma) to apply for a full Estate Agent Licence.</li>
+                <li><strong>Unique Feature</strong>: Victoria issues licenses with 3-year terms, and there's a strong emphasis on completing the full Certificate IV qualification upfront to become an Agent's Representative. (Source: <Link href="https://cpp41419.com.au/vic" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/vic</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/vic" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">VIC Provider Comparison</Link>
           </SpecialBlock>
 
            <h4>QLD - Registration to Salesperson</h4>
-          <SpecialBlock type="tip" title="QLD Pathway">
-            <ul className="list-disc pl-5">
-              <li><strong>Step 1</strong>: Registration Certificate (core units)</li>
-              <li><strong>Step 2</strong>: Real Estate Salesperson (full qualification + experience)</li>
-              <li><strong>Authority</strong>: Office of Fair Trading Queensland</li>
-              <li><strong>Unique Feature</strong>: Mandatory professional indemnity insurance from day one (Source: <Link href="https://cpp41419.com.au/qld" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/qld</Link>)</li>
+          <SpecialBlock type="tip" title="QLD Pathway Details">
+            <p>In Queensland, the real estate profession is regulated by the <strong>Office of Fair Trading (OFT) Queensland</strong>. The key legislation governing property occupations is the <strong>Property Occupations Act 2014</strong>, which aims to ensure fair and ethical practices within the industry.</p>
+            <ul className="list-disc pl-5 mt-2">
+              <li><strong>Regulatory Body</strong>: The Office of Fair Trading (OFT) Queensland is responsible for issuing licenses and registration certificates, monitoring compliance, and handling complaints related to property agents.</li>
+              <li><strong>Governing Legislation</strong>: The Property Occupations Act 2014 (QLD) and the Property Occupations Regulation 2014 set the standards for real estate practice, including educational requirements and conduct.</li>
+              <li><strong>Step 1 - Registration Certificate</strong>: New entrants typically start by obtaining a Registration Certificate as a Real Estate Salesperson or Property Manager. This requires completing a specific set of core units from the CPP41419 qualification.</li>
+              <li><strong>Step 2 - Full Real Estate Agent Licence</strong>: To obtain a full Real Estate Agent Licence, which allows an individual to operate their own agency or work as a principal agent, they must complete the full CPP41419 qualification, gain relevant industry experience, and meet other eligibility criteria.</li>
+              <li><strong>Unique Feature</strong>: Queensland has a notable requirement for mandatory professional indemnity insurance coverage for licensees from the outset of their careers, providing an early layer of consumer protection. (Source: <Link href="https://cpp41419.com.au/qld" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/qld</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/qld" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">QLD Provider Comparison</Link>
           </SpecialBlock>
@@ -318,8 +340,8 @@ graph LR
           <SpecialBlock type="tip" title="WA Pathway">
             <ul className="list-disc pl-5">
               <li><strong>Requirement</strong>: Full CPP41419 for 3-year license</li>
-              <li><strong>Authority</strong>: DMIRS</li>
-              <li><strong>Unique Feature</strong>: Separation of sales and settlement licensing (Source: <Link href="https://cpp41419.com.au/wa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/wa</Link>)</li>
+              <li><strong>Authority</strong>: DMIRS (Department of Mines, Industry Regulation and Safety)</li>
+              <li><strong>Unique Feature</strong>: Separation of sales and settlement licensing, with distinct pathways and requirements for each specialization. (Source: <Link href="https://cpp41419.com.au/wa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/wa</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/wa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">WA Provider Comparison</Link>
           </SpecialBlock>
@@ -327,10 +349,10 @@ graph LR
           <h4>SA - Land and Business Agent Path</h4>
           <SpecialBlock type="tip" title="SA Pathway">
             <ul className="list-disc pl-5">
-              <li><strong>Step 1</strong>: Registration (core units + SA specifics)</li>
-              <li><strong>Step 2</strong>: License (experience + additional requirements)</li>
-              <li><strong>Authority</strong>: Consumer and Business Services</li>
-              <li><strong>Unique Feature</strong>: Strictest trust account regulations (Source: <Link href="https://cpp41419.com.au/sa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/sa</Link>)</li>
+              <li><strong>Step 1</strong>: Registration (core units + SA specifics, e.g., understanding of local land acts)</li>
+              <li><strong>Step 2</strong>: License (experience + additional requirements, often including further study or mentoring)</li>
+              <li><strong>Authority</strong>: Consumer and Business Services (CBS)</li>
+              <li><strong>Unique Feature</strong>: South Australia is known for its particularly strict trust account regulations and auditing requirements, ensuring high levels of financial accountability. (Source: <Link href="https://cpp41419.com.au/sa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/sa</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/sa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">SA Provider Comparison</Link>
           </SpecialBlock>
@@ -338,9 +360,9 @@ graph LR
           <h4>TAS - Property Agent Registration</h4>
           <SpecialBlock type="tip" title="TAS Pathway">
             <ul className="list-disc pl-5">
-              <li><strong>Requirement</strong>: Full CPP41419 before registration</li>
-              <li><strong>Authority</strong>: CBOS</li>
-              <li><strong>Unique Feature</strong>: Smallest market with highest government subsidies (Source: <Link href="https://cpp41419.com.au/tas" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/tas</Link>)</li>
+              <li><strong>Requirement</strong>: Full CPP41419 before registration as a Property Agent.</li>
+              <li><strong>Authority</strong>: CBOS (Consumer, Building and Occupational Services)</li>
+              <li><strong>Unique Feature</strong>: Tasmania, being a smaller market, often features significant government subsidies for vocational training, potentially making CPP41419 more accessible. The market is also characterized by close-knit industry networks. (Source: <Link href="https://cpp41419.com.au/tas" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/tas</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/tas" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">TAS Provider Comparison</Link>
           </SpecialBlock>
@@ -348,10 +370,10 @@ graph LR
           <h4>ACT - Government Focus</h4>
           <SpecialBlock type="tip" title="ACT Pathway">
             <ul className="list-disc pl-5">
-              <li><strong>Step 1</strong>: Agent Registration</li>
-              <li><strong>Step 2</strong>: Real Estate Agent License</li>
-              <li><strong>Authority</strong>: Access Canberra</li>
-              <li><strong>Unique Feature</strong>: Leasehold land tenure system (Source: <Link href="https://cpp41419.com.au/act" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/act</Link>)</li>
+              <li><strong>Step 1</strong>: Agent Registration (completion of prescribed units from CPP41419).</li>
+              <li><strong>Step 2</strong>: Real Estate Agent License (full CPP41419, experience, and potentially further competency assessments).</li>
+              <li><strong>Authority</strong>: Access Canberra (part of the ACT Government)</li>
+              <li><strong>Unique Feature</strong>: The ACT operates primarily under a leasehold land tenure system, which is distinct from the freehold system prevalent in most other Australian states. Agents must have a thorough understanding of this system. (Source: <Link href="https://cpp41419.com.au/act" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/act</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/act" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">ACT Provider Comparison</Link>
           </SpecialBlock>
@@ -359,10 +381,10 @@ graph LR
           <h4>NT - Remote Area Considerations</h4>
           <SpecialBlock type="tip" title="NT Pathway">
             <ul className="list-disc pl-5">
-              <li><strong>Step 1</strong>: Agent Registration (18 months experience required)</li>
-              <li><strong>Step 2</strong>: Real Estate Agent License</li>
-              <li><strong>Authority</strong>: Department of Licensing and Regulation</li>
-              <li><strong>Unique Feature</strong>: Remote area endorsements and indigenous land considerations (Source: <Link href="https://cpp41419.com.au/nt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/nt</Link>)</li>
+              <li><strong>Step 1</strong>: Agent Registration (requires completion of CPP41419 and 18 months of supervised experience).</li>
+              <li><strong>Step 2</strong>: Real Estate Agent License (further requirements may apply for operating independently).</li>
+              <li><strong>Authority</strong>: Department of Licensing and Regulation (specific body may vary, often under Attorney-General and Justice)</li>
+              <li><strong>Unique Feature</strong>: The Northern Territory market includes unique considerations such as remote area property transactions, Indigenous land tenure issues, and specific building codes adapted to tropical climates. Licensing often has a strong emphasis on these local factors. (Source: <Link href="https://cpp41419.com.au/nt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cpp41419.com.au/nt</Link>)</li>
             </ul>
             <Link href="https://cpp41419.com.au/compare/nt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline block mt-2">NT Provider Comparison</Link>
           </SpecialBlock>
