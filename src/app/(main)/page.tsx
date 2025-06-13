@@ -20,12 +20,12 @@ export default function HomePage() {
           Unlock CPP41419 Mastery: Your Authoritative Q&amp;A Hub
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Gain data-backed insights and clear answers, ensuring you're fully prepared for the Certificate IV in Real Estate Practice. Don't just study – strategize your success with our comprehensive knowledge base.
+          Gain data-backed insights and clear answers, ensuring you're fully prepared for the CPP41419 Certificate IV in Real Estate Practice. Don't just study – strategize your success with our comprehensive knowledge base.
         </p>
         <div className="pt-4">
           <Button size="lg" className="rounded-full" asChild>
             <Link href={categories.length > 0 ? `/questions/${categories[0].slug}` : '/'}>
-              Start Exploring Questions
+              CPP41419 Answers
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
