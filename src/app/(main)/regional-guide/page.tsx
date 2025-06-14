@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Breadcrumbs } from '@/components/core/Breadcrumbs';
-import { MapPin, Building, Briefcase, TrendingUp, Landmark, MountainSnow, Sun, Waves, Anchor, Leaf, Sprout, City, Banknote, Users, Scale, Home } from 'lucide-react';
+import { MapPin, Building, Briefcase, TrendingUp, Landmark, MountainSnow, Sun, Waves, Anchor, Leaf, Sprout, Building2, Banknote, Users, Scale, Home, AlertCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Regional Real Estate Guide: Australia | CPP41419 Q&A',
+  title: 'Becoming A Real Estate Agent Regional Guide: Australia | CPP41419 Q&A',
   description: 'Explore the unique differences and considerations for becoming a real estate agent in major cities and regions across Australia, from Sydney to Perth.',
   keywords: ['real estate regions Australia', 'become real estate agent Sydney', 'Melbourne property market', 'Brisbane real estate career', 'Perth agent requirements', 'regional real estate guide'],
 };
@@ -55,7 +55,7 @@ export default function RegionalGuidePage() {
         <AccordionItem value="nsw">
           <AccordionTrigger className="text-2xl font-semibold hover:no-underline p-4 bg-muted/50 rounded-lg">
             <div className="flex items-center">
-              <City className="mr-3 h-6 w-6 text-primary" /> New South Wales (NSW)
+              <Building2 className="mr-3 h-6 w-6 text-primary" /> New South Wales (NSW)
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-4 px-2 md:px-4">
@@ -342,7 +342,7 @@ export default function RegionalGuidePage() {
       <Card className="mt-8 bg-accent/10 border-accent/30 rounded-xl shadow-lg">
         <CardHeader>
           <CardTitle className="text-xl flex items-center font-semibold">
-            <Info className="h-5 w-5 mr-2.5 text-primary" />
+            <AlertCircle className="h-5 w-5 mr-2.5 text-primary" />
             Important Considerations
           </CardTitle>
         </CardHeader>

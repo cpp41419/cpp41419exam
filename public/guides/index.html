@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPP41419 Real Estate State Guides</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+        
+        *::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .state-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .state-card.expanded {
+            z-index: 20;
+            transform: scale(1.05);
+        }
+        
+        .state-card-content {
+            backface-visibility: hidden;
+            transform: translateZ(10px);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .download-btn {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        
+        .tab-item {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .tab-item.active {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        
+        .module-list li {
+            position: relative;
+            padding-left: 28px;
+        }
+        
+        .module-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-6 px-4 sm:px-6 shadow-lg">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="bg-white p-2 rounded-xl shadow-lg">
+                        <i class="fas fa-building text-blue-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl sm:text-3xl font-bold">CPP41419 State Guides</h1>
+                        <p class="text-blue-100 text-sm sm:text-base">Certificate IV in Real Estate Practice</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button class="bg-white/20 hover:bg-white/30 rounded-lg px-4 py-2 transition-colors">
+                        <i class="fas fa-download mr-2"></i> All Guides
+                    </button>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold rounded-lg px-4 py-2 transition-colors">
+                        <i class="fas fa-graduation-cap mr-2"></i> Enroll Now
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-grow py-8 px-4 sm:px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Hero Section -->
+                <section class="text-center mb-12">
+                    <div class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-6 rounded-full mb-6">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Select Your State
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        Real Estate Certification Guides
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                        Comprehensive state-specific guides for the CPP41419 Certificate IV in Real Estate Practice. 
+                        Download your guide and start your career in real estate today.
+                    </p>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 max-w-3xl mx-auto flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center bg-green-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-2"></i>
+                            <span>State-Specific Requirements</span>
+                        </div>
+                        <div class="flex items-center bg-blue-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-book text-blue-500 text-xl mr-2"></i>
+                            <span>Detailed Module Breakdown</span>
+                        </div>
+                        <div class="flex items-center bg-purple-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-download text-purple-500 text-xl mr-2"></i>
+                            <span>Downloadable PDF Guides</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- State Selector -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-12">
+                    <div class="tab-item active bg-blue-600 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-sydney-opera-house text-3xl mb-2"></i>
+                        <h3 class="font-bold">NSW</h3>
+                        <p class="text-sm opacity-80">New South Wales</p>
+                    </div>
+                    
+                    <div class="tab-item bg-purple-600 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-melbourne text-3xl mb-2"></i>
+                        <h3 class="font-bold">VIC</h3>
+                        <p class="text-sm opacity-80">Victoria</p>
+                    </div>
+                    
+                    <div class="tab-item bg-red-700 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-brisbane text-3xl mb-2"></i>
+                        <h3 class="font-bold">QLD</h3>
+                        <p class="text-sm opacity-80">Queensland</p>
+                    </div>
+                    
+                    <div class="tab-item bg-yellow-400 text-gray-800 rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-adelaide text-3xl mb-2"></i>
+                        <h3 class="font-bold">SA</h3>
+                        <p class="text-sm opacity-80">South Australia</p>
+                    </div>
+                    
+                    <div class="tab-item bg-teal-600 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-perth text-3xl mb-2"></i>
+                        <h3 class="font-bold">WA</h3>
+                        <p class="text-sm opacity-80">Western Australia</p>
+                    </div>
+                    
+                    <div class="tab-item bg-sky-400 text-gray-800 rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-hobart text-3xl mb-2"></i>
+                        <h3 class="font-bold">TAS</h3>
+                        <p class="text-sm opacity-80">Tasmania</p>
+                    </div>
+                    
+                    <div class="tab-item bg-violet-600 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-canberra text-3xl mb-2"></i>
+                        <h3 class="font-bold">ACT</h3>
+                        <p class="text-sm opacity-80">Capital Territory</p>
+                    </div>
+                    
+                    <div class="tab-item bg-orange-500 text-white rounded-xl p-4 text-center cursor-pointer transition-all">
+                        <i class="fas fa-darwin text-3xl mb-2"></i>
+                        <h3 class="font-bold">NT</h3>
+                        <p class="text-sm opacity-80">Northern Territory</p>
+                    </div>
+                </div>
+                
+                <!-- State Guide Card -->
+                <div class="state-card bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto fade-in">
+                    <div class="state-card-content">
+                        <!-- Card Header -->
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 sm:p-8">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                                <div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-sydney-opera-house text-2xl mr-3"></i>
+                                        <h2 class="text-2xl sm:text-3xl font-bold">New South Wales Guide</h2>
+                                    </div>
+                                    <p class="text-blue-100">Certificate IV in Real Estate Practice - CPP41419</p>
+                                </div>
+                                <div class="mt-4 sm:mt-0 bg-white/20 rounded-full px-4 py-1 text-sm">
+                                    Updated: June 2023
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Content -->
+                        <div class="p-6 sm:p-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-4">Course Overview</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        This guide contains all required information for students pursuing the CPP41419 Certificate IV in Real Estate Practice in New South Wales.
+                                    </p>
+                                    
+                                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg mb-6">
+                                        <h4 class="font-bold text-blue-800 mb-2">NSW Specific Requirements</h4>
+                                        <ul class="text-gray-700 space-y-1">
+                                            <li>• Minimum 12 months supervised experience</li>
+                                            <li>• License application fee: $450</li>
+                                            <li>• Mandatory continuing professional development</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <h3 class="text-xl font-bold text-gray-800 mb-4">What's Included</h3>
+                                    <ul class="module-list space-y-2 text-gray-700 mb-6">
+                                        <li>State-specific legislation and regulations</li>
+                                        <li>Property management requirements</li>
+                                        <li>Sales and agency practice guidelines</li>
+                                        <li>Ethical conduct standards</li>
+                                        <li>Trust accounting procedures</li>
+                                        <li>Continuing education requirements</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                                        <h3 class="text-xl font-bold text-gray-800 mb-4">Download Guide</h3>
+                                        <div class="flex items-start mb-6">
+                                            <div class="mr-4 text-blue-500">
+                                                <i class="fas fa-file-pdf text-4xl"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-800">CPP41419-NSW-Guide.pdf</h4>
+                                                <p class="text-gray-600 text-sm">Comprehensive 48-page guide</p>
+                                                <p class="text-gray-600 text-sm">File size: 3.2 MB</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="download-btn w-full py-3 rounded-lg text-white font-semibold mb-4">
+                                            <i class="fas fa-download mr-2"></i> Download NSW Guide
+                                        </button>
+                                        
+                                        <p class="text-center text-gray-600 text-sm">
+                                            <i class="fas fa-lock mr-1"></i> Secure download • PDF format
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="mt-6">
+                                        <h3 class="text-xl font-bold text-gray-800 mb-4">Additional Resources</h3>
+                                        <div class="space-y-3">
+                                            <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
+                                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                                    <i class="fas fa-book text-blue-600"></i>
+                                                </div>
+                                                <span>NSW Legislation Handbook</span>
+                                            </a>
+                                            <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
+                                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                                    <i class="fas fa-video text-green-600"></i>
+                                                </div>
+                                                <span>CPP41419 Course Webinar</span>
+                                            </a>
+                                            <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
+                                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                                    <i class="fas fa-headset text-purple-600"></i>
+                                                </div>
+                                                <span>NSW Support Contacts</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white py-10 px-4 sm:px-6 mt-12">
+          <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c2337ddf740e886b114bbbe86c4135ae0d58cf04
+                <h3 class="text-xl font-bold mb-4">CPP49149</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">Partner with us</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">How We Can Help</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Quick Links</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Providers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Take the Quiz</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Legal</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Capitals</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">NSW Sydney</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">VIC Melbourne</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">QLD Brisbane</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">SA Adelaide</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">WA Perth</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">TAS Hobart</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">NT Darwin</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">ACT Canberra</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Location</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">NSW</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">VIC</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">QLD</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">SA</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">WA</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">TAS</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">NT</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">ACT</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <p class="text-gray-300">contact@cpp41419.com.au</p>
+                <p class="text-gray-300">1300 CPP 419</p>
+                <h3 class="text-xl font-bold mt-6 mb-4">CPP41419 Modes</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">24/7 Online Access</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Dedicated Support Team</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Industry Professional Trainers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Fast-Track Options Available</a></li>
+                </ul>
+                <h3 class="text-xl font-bold mt-6 mb-4">Compare Educators</h3>
+                <a href="#" class="text-gray-300 hover:text-white">Compare Now</a>
+              </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+              <p>© 2025 CPP41419 Comparison Platform. All rights reserved.</p>
+<<<<<<< HEAD
+=======
+                <h3 class="text-xl font-bold mb-4">CPP41419 Resources</h3>
+=======
+                <h3 class="text-xl font-bold mb-4">CPP49149</h3>
+>>>>>>> 26113fc (yy)
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">Partner with us</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">How We Can Help</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Quick Links</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Providers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Take the Quiz</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Legal</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Capitals</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">NSW Sydney</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">VIC Melbourne</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">QLD Brisbane</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">SA Adelaide</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">WA Perth</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">TAS Hobart</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">NT Darwin</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">ACT Canberra</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Location</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">NSW</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">VIC</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">QLD</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">SA</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">WA</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">TAS</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">NT</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">ACT</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <p class="text-gray-300">contact@cpp41419.com.au</p>
+                <p class="text-gray-300">1300 CPP 419</p>
+                <h3 class="text-xl font-bold mt-6 mb-4">CPP41419 Modes</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-300 hover:text-white">24/7 Online Access</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Dedicated Support Team</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Industry Professional Trainers</a></li>
+                  <li><a href="#" class="text-gray-300 hover:text-white">Fast-Track Options Available</a></li>
+                </ul>
+                <h3 class="text-xl font-bold mt-6 mb-4">Compare Educators</h3>
+                <a href="#" class="text-gray-300 hover:text-white">Compare Now</a>
+              </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+<<<<<<< HEAD
+              <p>© 2023 CPP41419 Real Estate Certification. All rights reserved.</p>
+              <p class="mt-2 text-sm">The CPP41419 Certificate IV in Real Estate Practice is a nationally recognized qualification in Australia.</p>
+>>>>>>> 2f08c03 (jj)
+=======
+              <p>© 2025 CPP41419 Comparison Platform. All rights reserved.</p>
+>>>>>>> 26113fc (yy)
+=======
+>>>>>>> c2337ddf740e886b114bbbe86c4135ae0d58cf04
+            </div>
+          </div>
+        </footer>
+    </div>
+    
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "CPP41419 Real Estate State Guides",
+  "description": "Comprehensive state-specific guides for the CPP41419 Certificate IV in Real Estate Practice. Download your guide and start your career in real estate today.",
+  "url": "https://cpp41419.com.au/guides",
+  "about": {
+    "@type": "Course",
+    "name": "CPP41419 Certificate IV in Real Estate Practice"
+  }
+}
+</script>
+    <script type="application/javascript">
+import React, { useState } from 'react';
+
+const App = () => {
+  const [clickedSteps, setClickedSteps] = useState(0);
+  const [revealed, setRevealed] = useState(false);
+  const [showCatModal, setShowCatModal] = useState(false);
+
+  const steps = [
+    {
+      number: "01",
+      title: "Tell Us Your Goals",
+      description:
+        "State, timeline, budget, experience level—we match you with suitable RTOs based on your specific requirements.",
+      action: "Take Quiz",
+      color: "blue"
+    },
+    {
+      number: "02",
+      title: "We Test Them Anonymously",
+      description:
+        "We contact RTOs with tough questions about completion rates, support, and costs. You stay anonymous until you're ready.",
+      action: "Get Analysis",
+      color: "green"
+    },
+    {
+      number: "03",
+      title: "Choose With Confidence",
+      description:
+        "Review quality scores, response analysis, and transparent comparisons. Make an informed decision backed by real data.",
+      action: "Compare RTOs",
+      color: "purple"
+    }
+  ];
+
+  const getColorClasses = (color) => {
+    const colors = {
+      blue: {
+        bg: "bg-white",
+        icon: "text-blue-600",
+        number: "text-blue-600 bg-blue-100",
+        button: "bg-blue-600 hover:bg-blue-700"
+      },
+      green: {
+        bg: "bg-white",
+        icon: "text-green-600",
+        number: "text-green-600 bg-green-100",
+        button: "bg-green-600 hover:bg-green-700"
+      },
+      purple: {
+        bg: "bg-white",
+        icon: "text-purple-600",
+        number: "text-purple-600 bg-purple-100",
+        button: "bg-purple-600 hover:bg-purple-700"
+      }
+    };
+    return colors[color];
+  };
+
+  const handleStepClick = () => {
+    const newClicks = clickedSteps + 1;
+    setClickedSteps(newClicks);
+    if (newClicks >= 3 && !revealed) {
+      setTimeout(() => setRevealed(true), 300);
+    }
+  };
+
+  const playCatSound = () => {
+    const audio = new Audio('https://www.soundjay.com/button/sounds/button-16.mp3'); 
+    audio.play();
+  };
+
+  return (
+    <section className="py-16 bg-gray-50 text-gray-900 relative font-sans">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 transition-transform duration-500 hover:scale-105">
+            How We Help You Choose the Right CPP41419 Course
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed opacity-90">
+            Simple, transparent, and completely independent. No marketing fluff—just real analysis to guide your decision.
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {steps.map((step, index) => {
+            const colors = getColorClasses(step.color);
+
+            return (
+              <div key={index} className="relative group">
+                {/* Connection Line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-16 left-full w-8 h-0.5 bg-gray-300 transform -translate-y-1/2 z-0"></div>
+                )}
+
+                {/* Step Card */}
+                <div
+                  onClick={handleStepClick}
+                  className={`${colors.bg} rounded-xl p-8 text-center h-full shadow-md border border-gray-200 transform transition-all duration-300 group-hover:-translate-y-4 group-hover:shadow-2xl group-hover:rotate-1 cursor-pointer`}
+                >
+                  {/* Step Number */}
+                  <div className={`${colors.number} w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-6 transition-transform duration-300 group-hover:rotate-12`}>
+                    {step.number}
+                  </div>
+
+                  {/* Icon */}
+                  <div className={`mb-5 ${colors.icon} mx-auto flex justify-center transition-transform duration-300 group-hover:scale-110`}>
+                    {step.color === "blue" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    )}
+                    {step.color === "green" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    )}
+                    {step.color === "purple" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+
+                  {/* Description */}
+                  <p className="text-gray-700 mb-6 leading-relaxed">{step.description}</p>
+
+                  {/* Action Button */}
+                  <button className={`${colors.button} text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 w-full shadow-sm hover:shadow-md hover:brightness-110`}>
+                    {step.action}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Hidden CAT Button */}
+        {!revealed && <div className="h-24"></div>}
+        {revealed && (
+          <div className="mt-16 text-center animate-popIn">
+            <button
+              onClick={() => {
+                playCatSound();
+                setShowCatModal(true);
+              }}
+              className="inline-block bg-gradient-to-br from-yellow-400 to-red-400 text-white font-bold px-8 py-4 rounded-lg shadow-lg transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 border-t-2 border-l-2 border-white uppercase tracking-wider text-sm focus:outline-none"
+            >
+              🐾 CAT
+            </button>
+          </div>
+        )}
+
+        {/* CAT Modal */}
+        {showCatModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn">
+            <div className="bg-white rounded-xl p-8 max-w-md text-center shadow-2xl transform rotate-1 transition-transform duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Meow! 🐱</h3>
+              <p className="text-gray-700 mb-6">
+                Did you know? Cats sleep for 70% of their lives. That means they’re dreaming about RTO evaluations too.
+              </p>
+              <button
+                onClick={() => setShowCatModal(false)}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c2337ddf740e886b114bbbe86c4135ae0d58cf04
+const Footer = () => (
+  <footer className="bg-blue-900 text-white py-10 px-4 sm:px-6 mt-12">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 className="text-xl font-bold mb-4">CPP49149</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-300 hover:text-white">Partner with us</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">How We Can Help</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Quick Links</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Home</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Providers</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Take the Quiz</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">About Us</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Contact</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Legal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-4">Capitals</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-300 hover:text-white">NSW Sydney</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">VIC Melbourne</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">QLD Brisbane</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">SA Adelaide</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">WA Perth</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">TAS Hobart</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">NT Darwin</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">ACT Canberra</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-4">Location</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-300 hover:text-white">NSW</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">VIC</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">QLD</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">SA</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">WA</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">TAS</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">NT</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">ACT</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+          <p className="text-gray-300">contact@cpp41419.com.au</p>
+          <p className="text-gray-300">1300 CPP 419</p>
+          <h3 className="text-xl font-bold mt-6 mb-4">CPP41419 Modes</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-300 hover:text-white">24/7 Online Access</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Dedicated Support Team</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Industry Professional Trainers</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white">Fast-Track Options Available</a></li>
+          </ul>
+          <h3 className="text-xl font-bold mt-6 mb-4">Compare Educators</h3>
+          <a href="#" className="text-gray-300 hover:text-white">Compare Now</a>
+        </div>
+      </div>
+      <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+        <p>© 2025 CPP41419 Comparison Platform. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2f08c03 (jj)
+=======
+>>>>>>> c2337ddf740e886b114bbbe86c4135ae0d58cf04
+export default App;
+</script>
+</body>
+</html>

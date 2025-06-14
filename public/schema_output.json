@@ -1,0 +1,686 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://thinkrealestate.net.au",
+    "name": "Page from thinkrealestate.net.au",
+    "description": "Content from thinkrealestate.net.au",
+    "datePublished": "2025-05-29T08:02:04.560151",
+    "publisher": {
+      "@type": "Organization",
+      "name": "thinkrealestate.net.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://thesalesmasters.com.au",
+    "name": "Page from thesalesmasters.com.au",
+    "description": "Content from thesalesmasters.com.au",
+    "datePublished": "2025-05-29T08:02:04.560164",
+    "publisher": {
+      "@type": "Organization",
+      "name": "thesalesmasters.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://theneurocoaching.academy",
+    "name": "Page from theneurocoaching.academy",
+    "description": "Content from theneurocoaching.academy",
+    "datePublished": "2025-05-29T08:02:04.560169",
+    "publisher": {
+      "@type": "Organization",
+      "name": "theneurocoaching.academy"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://techlearn.com.au",
+    "name": "Page from techlearn.com.au",
+    "description": "Content from techlearn.com.au",
+    "datePublished": "2025-05-29T08:02:04.560173",
+    "publisher": {
+      "@type": "Organization",
+      "name": "techlearn.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://tafensw.edu.au",
+    "name": "Page from tafensw.edu.au",
+    "description": "Content from tafensw.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560178",
+    "publisher": {
+      "@type": "Organization",
+      "name": "tafensw.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://streamlineforsuccess.com.au",
+    "name": "Page from streamlineforsuccess.com.au",
+    "description": "Content from streamlineforsuccess.com.au",
+    "datePublished": "2025-05-29T08:02:04.560183",
+    "publisher": {
+      "@type": "Organization",
+      "name": "streamlineforsuccess.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://ssts.edu.au",
+    "name": "Page from ssts.edu.au",
+    "description": "Content from ssts.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560187",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ssts.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://sportsa.org.au",
+    "name": "Page from sportsa.org.au",
+    "description": "Content from sportsa.org.au",
+    "datePublished": "2025-05-29T08:02:04.560191",
+    "publisher": {
+      "@type": "Organization",
+      "name": "sportsa.org.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://mytraining.skills.sa.gov.au",
+    "name": "Page from mytraining.skills.sa.gov.au",
+    "description": "Content from mytraining.skills.sa.gov.au",
+    "datePublished": "2025-05-29T08:02:04.560195",
+    "publisher": {
+      "@type": "Organization",
+      "name": "mytraining.skills.sa.gov.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://skillsgateway.training.qld.gov.au",
+    "name": "Page from skillsgateway.training.qld.gov.au",
+    "description": "Content from skillsgateway.training.qld.gov.au",
+    "datePublished": "2025-05-29T08:02:04.560201",
+    "publisher": {
+      "@type": "Organization",
+      "name": "skillsgateway.training.qld.gov.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://facebook.com/skilledup",
+    "name": "Page from facebook.com",
+    "description": "Content from facebook.com",
+    "datePublished": "2025-05-29T08:02:04.560206",
+    "publisher": {
+      "@type": "Organization",
+      "name": "facebook.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://siit.nsw.edu.au",
+    "name": "Page from siit.nsw.edu.au",
+    "description": "Content from siit.nsw.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560210",
+    "publisher": {
+      "@type": "Organization",
+      "name": "siit.nsw.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://scei.edu.au",
+    "name": "Page from scei.edu.au",
+    "description": "Content from scei.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560215",
+    "publisher": {
+      "@type": "Organization",
+      "name": "scei.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://retsnsw.edu.au",
+    "name": "Page from retsnsw.edu.au",
+    "description": "Content from retsnsw.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560219",
+    "publisher": {
+      "@type": "Organization",
+      "name": "retsnsw.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://rets.com.au",
+    "name": "Page from rets.com.au",
+    "description": "Content from rets.com.au",
+    "datePublished": "2025-05-29T08:02:04.560223",
+    "publisher": {
+      "@type": "Organization",
+      "name": "rets.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://retac.com.au",
+    "name": "Page from retac.com.au",
+    "description": "Content from retac.com.au",
+    "datePublished": "2025-05-29T08:02:04.560227",
+    "publisher": {
+      "@type": "Organization",
+      "name": "retac.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://members.reiwa.com.au",
+    "name": "Page from members.reiwa.com.au",
+    "description": "Content from members.reiwa.com.au",
+    "datePublished": "2025-05-29T08:02:04.560231",
+    "publisher": {
+      "@type": "Organization",
+      "name": "members.reiwa.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://reiv.com.au",
+    "name": "Page from reiv.com.au",
+    "description": "Content from reiv.com.au",
+    "datePublished": "2025-05-29T08:02:04.560235",
+    "publisher": {
+      "@type": "Organization",
+      "name": "reiv.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://reiq.com",
+    "name": "Page from reiq.com",
+    "description": "Content from reiq.com",
+    "datePublished": "2025-05-29T08:02:04.560239",
+    "publisher": {
+      "@type": "Organization",
+      "name": "reiq.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://reinsw.com.au",
+    "name": "Page from reinsw.com.au",
+    "description": "Content from reinsw.com.au",
+    "datePublished": "2025-05-29T08:02:04.560243",
+    "publisher": {
+      "@type": "Organization",
+      "name": "reinsw.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://realestatetrainingcentre.com",
+    "name": "Page from realestatetrainingcentre.com",
+    "description": "Content from realestatetrainingcentre.com",
+    "datePublished": "2025-05-29T08:02:04.560250",
+    "publisher": {
+      "@type": "Organization",
+      "name": "realestatetrainingcentre.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://realestatetraining.com.au",
+    "name": "Page from realestatetraining.com.au",
+    "description": "Content from realestatetraining.com.au",
+    "datePublished": "2025-05-29T08:02:04.560254",
+    "publisher": {
+      "@type": "Organization",
+      "name": "realestatetraining.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://reaa.com.au",
+    "name": "Page from reaa.com.au",
+    "description": "Content from reaa.com.au",
+    "datePublished": "2025-05-29T08:02:04.560259",
+    "publisher": {
+      "@type": "Organization",
+      "name": "reaa.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://qualify.edu.au",
+    "name": "Page from qualify.edu.au",
+    "description": "Content from qualify.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560263",
+    "publisher": {
+      "@type": "Organization",
+      "name": "qualify.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://publicsectornetwork.co",
+    "name": "Page from publicsectornetwork.co",
+    "description": "Content from publicsectornetwork.co",
+    "datePublished": "2025-05-29T08:02:04.560268",
+    "publisher": {
+      "@type": "Organization",
+      "name": "publicsectornetwork.co"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://propertytraining.com.au",
+    "name": "Page from propertytraining.com.au",
+    "description": "Content from propertytraining.com.au",
+    "datePublished": "2025-05-29T08:02:04.560272",
+    "publisher": {
+      "@type": "Organization",
+      "name": "propertytraining.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://proleadersacademy.com.au",
+    "name": "Page from proleadersacademy.com.au",
+    "description": "Content from proleadersacademy.com.au",
+    "datePublished": "2025-05-29T08:02:04.560276",
+    "publisher": {
+      "@type": "Organization",
+      "name": "proleadersacademy.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://pret.edu.au",
+    "name": "Page from pret.edu.au",
+    "description": "Content from pret.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560280",
+    "publisher": {
+      "@type": "Organization",
+      "name": "pret.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://originalcampus.edu.au",
+    "name": "Page from originalcampus.edu.au",
+    "description": "Content from originalcampus.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560285",
+    "publisher": {
+      "@type": "Organization",
+      "name": "originalcampus.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://ntca.edu.au",
+    "name": "Page from ntca.edu.au",
+    "description": "Content from ntca.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560289",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ntca.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://nrel.edu.au",
+    "name": "Page from nrel.edu.au",
+    "description": "Content from nrel.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560293",
+    "publisher": {
+      "@type": "Organization",
+      "name": "nrel.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://nationalcollege.edu.au",
+    "name": "Page from nationalcollege.edu.au",
+    "description": "Content from nationalcollege.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560297",
+    "publisher": {
+      "@type": "Organization",
+      "name": "nationalcollege.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://livingplanit.com.au",
+    "name": "Page from livingplanit.com.au",
+    "description": "Content from livingplanit.com.au",
+    "datePublished": "2025-05-29T08:02:04.560301",
+    "publisher": {
+      "@type": "Organization",
+      "name": "livingplanit.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://leveragegroup.com.au",
+    "name": "Page from leveragegroup.com.au",
+    "description": "Content from leveragegroup.com.au",
+    "datePublished": "2025-05-29T08:02:04.560305",
+    "publisher": {
+      "@type": "Organization",
+      "name": "leveragegroup.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://kaplanprofessional.edu.au",
+    "name": "Page from kaplanprofessional.edu.au",
+    "description": "Content from kaplanprofessional.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560309",
+    "publisher": {
+      "@type": "Organization",
+      "name": "kaplanprofessional.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://itc.nsw.edu.au",
+    "name": "Page from itc.nsw.edu.au",
+    "description": "Content from itc.nsw.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560313",
+    "publisher": {
+      "@type": "Organization",
+      "name": "itc.nsw.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://industrytrainingalliance.com.au",
+    "name": "Page from industrytrainingalliance.com.au",
+    "description": "Content from industrytrainingalliance.com.au",
+    "datePublished": "2025-05-29T08:02:04.560317",
+    "publisher": {
+      "@type": "Organization",
+      "name": "industrytrainingalliance.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://indusinstitute.edu.au",
+    "name": "Page from indusinstitute.edu.au",
+    "description": "Content from indusinstitute.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560321",
+    "publisher": {
+      "@type": "Organization",
+      "name": "indusinstitute.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://fwmgroup.com.au",
+    "name": "Page from fwmgroup.com.au",
+    "description": "Content from fwmgroup.com.au",
+    "datePublished": "2025-05-29T08:02:04.560325",
+    "publisher": {
+      "@type": "Organization",
+      "name": "fwmgroup.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://fordswimcentre.com.au",
+    "name": "Page from fordswimcentre.com.au",
+    "description": "Content from fordswimcentre.com.au",
+    "datePublished": "2025-05-29T08:02:04.560329",
+    "publisher": {
+      "@type": "Organization",
+      "name": "fordswimcentre.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://entryeducation.edu.au",
+    "name": "Page from entryeducation.edu.au",
+    "description": "Content from entryeducation.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560334",
+    "publisher": {
+      "@type": "Organization",
+      "name": "entryeducation.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://trainingcentre.freshdesk.com",
+    "name": "Page from trainingcentre.freshdesk.com",
+    "description": "Content from trainingcentre.freshdesk.com",
+    "datePublished": "2025-05-29T08:02:04.560338",
+    "publisher": {
+      "@type": "Organization",
+      "name": "trainingcentre.freshdesk.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://deakinco.com",
+    "name": "Page from deakinco.com",
+    "description": "Content from deakinco.com",
+    "datePublished": "2025-05-29T08:02:04.560342",
+    "publisher": {
+      "@type": "Organization",
+      "name": "deakinco.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://cpp41419.com.au",
+    "name": "Page from cpp41419.com.au",
+    "description": "Content from cpp41419.com.au",
+    "datePublished": "2025-05-29T08:02:04.560346",
+    "publisher": {
+      "@type": "Organization",
+      "name": "cpp41419.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://courses.com.au",
+    "name": "Page from courses.com.au",
+    "description": "Content from courses.com.au",
+    "datePublished": "2025-05-29T08:02:04.560351",
+    "publisher": {
+      "@type": "Organization",
+      "name": "courses.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://connektcoaching.com.au",
+    "name": "Page from connektcoaching.com.au",
+    "description": "Content from connektcoaching.com.au",
+    "datePublished": "2025-05-29T08:02:04.560356",
+    "publisher": {
+      "@type": "Organization",
+      "name": "connektcoaching.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://completepropertytraining.com.au",
+    "name": "Page from completepropertytraining.com.au",
+    "description": "Content from completepropertytraining.com.au",
+    "datePublished": "2025-05-29T08:02:04.560360",
+    "publisher": {
+      "@type": "Organization",
+      "name": "completepropertytraining.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://ccg.asn.au",
+    "name": "Page from ccg.asn.au",
+    "description": "Content from ccg.asn.au",
+    "datePublished": "2025-05-29T08:02:04.560364",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ccg.asn.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://bcci.edu.au",
+    "name": "Page from bcci.edu.au",
+    "description": "Content from bcci.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560368",
+    "publisher": {
+      "@type": "Organization",
+      "name": "bcci.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://bbht.com.au",
+    "name": "Page from bbht.com.au",
+    "description": "Content from bbht.com.au",
+    "datePublished": "2025-05-29T08:02:04.560372",
+    "publisher": {
+      "@type": "Organization",
+      "name": "bbht.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://auscbt.com.au",
+    "name": "Page from auscbt.com.au",
+    "description": "Content from auscbt.com.au",
+    "datePublished": "2025-05-29T08:02:04.560376",
+    "publisher": {
+      "@type": "Organization",
+      "name": "auscbt.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://aws.edu.au",
+    "name": "Page from aws.edu.au",
+    "description": "Content from aws.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560380",
+    "publisher": {
+      "@type": "Organization",
+      "name": "aws.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://astc.edu.au",
+    "name": "Page from astc.edu.au",
+    "description": "Content from astc.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560384",
+    "publisher": {
+      "@type": "Organization",
+      "name": "astc.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://aspirept.com.au",
+    "name": "Page from aspirept.com.au",
+    "description": "Content from aspirept.com.au",
+    "datePublished": "2025-05-29T08:02:04.560388",
+    "publisher": {
+      "@type": "Organization",
+      "name": "aspirept.com.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://aiwt.edu.au",
+    "name": "Page from aiwt.edu.au",
+    "description": "Content from aiwt.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560392",
+    "publisher": {
+      "@type": "Organization",
+      "name": "aiwt.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://acop.edu.au",
+    "name": "Page from acop.edu.au",
+    "description": "Content from acop.edu.au",
+    "datePublished": "2025-05-29T08:02:04.560396",
+    "publisher": {
+      "@type": "Organization",
+      "name": "acop.edu.au"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://aapm.org.au",
+    "name": "Page from aapm.org.au",
+    "description": "Content from aapm.org.au",
+    "datePublished": "2025-05-29T08:02:04.560400",
+    "publisher": {
+      "@type": "Organization",
+      "name": "aapm.org.au"
+    }
+  }
+]

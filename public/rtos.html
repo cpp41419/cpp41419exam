@@ -1,0 +1,150 @@
+<!-- Add this to your <head> before </head> -->
+<style>
+    /* Modal Styles */
+    .rtomodal-backdrop {
+        position: fixed;
+        z-index: 9999;
+        inset: 0;
+        background: rgba(34, 48, 83, 0.32);
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .rtomodal-backdrop.active {
+        display: flex;
+    }
+    .rtomodal {
+        background: #f8f4ff; /* Pastel purple */
+        border-radius: 8px;
+        max-width: 90vw;
+        width: 300px;
+        box-shadow: 0 8px 32px rgba(44,64,120,0.18), 0 1.5px 10px rgba(44,64,120,0.07);
+        padding: 1.5em 1em;
+        position: relative;
+        text-align: center;
+        animation: fadeInModal 0.22s;
+        font-family: 'Press Start 2P', cursive; /* Pixel retro font */
+    }
+    @keyframes fadeInModal {
+        from { opacity: 0; transform: scale(0.97);}
+        to   { opacity: 1; transform: scale(1);}
+    }
+    .rtomodal-close {
+        position: absolute;
+        top: 0.5em;
+        right: 0.8em;
+        font-size: 1.2em;
+        color: #888;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+        z-index: 2;
+    }
+    .rtomodal-close:hover { color: #d7263d; }
+    .rtomodal-title {
+        font-size: 1em;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+        color: #3773e5;
+    }
+    .rtomodal-body {
+        color: #222;
+        font-size: 0.9em;
+        margin-bottom: 1em;
+    }
+    .rtomodal-footer {
+        margin-top: 1em;
+    }
+    .rtomodal-btn {
+        background: #3773e5;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.18s;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .rtomodal-btn:hover {
+        background: #2156b6;
+    }
+    .mode-tag {
+        display: inline-block;
+        padding: 0.3em 0.6em;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        margin: 0.2em;
+        color: #fff;
+        background: #ffb6c1; /* Pastel pink for online */
+    }
+    .mode-tag.in-person {
+        background: #add8e6; /* Pastel blue for in-person */
+    }
+    @media (max-width: 500px) {
+        .rtomodal { width: 95vw; padding: 1em 0.5em; }
+        .rtomodal-title { font-size: 0.9em; }
+        .rtomodal-body { font-size: 0.8em; }
+    }
+</style>
+
+<!-- Place this just before </body> -->
+<div class="rtomodal-backdrop" id="rtomodal-backdrop" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="rtomodal" role="document">
+        <button class="rtomodal-close" aria-label="Close" id="rtomodal-close">&times;</button>
+        <div class="rtomodal-title" id="rtomodal-title">Leaving to Provider Website</div>
+        <div class="rtomodal-body" id="rtomodal-body">
+            You are about to visit an external provider website.<br>
+            <span style="color:#888;font-size:0.8em;">(This link opens in a new tab.)</span>
+            <div class="mode-tag">Online</div>
+            <div class="mode-tag in-person">In-Person</div>
+        </div>
+        <div class="rtomodal-footer">
+            <a href="#" target="_blank" rel="noopener" class="rtomodal-btn" id="rtomodal-visit">Continue</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalBackdrop = document.getElementById('rtomodal-backdrop');
+        const modalClose = document.getElementById('rtomodal-close');
+        const modalVisit = document.getElementById('rtomodal-visit');
+        let lastFocus = null;
+
+        // Attach modal to all provider links
+        document.querySelectorAll('.provider-card a.cta, .provider-card a[href^="http"], .provider-card a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Only intercept if external
+                if (link.href && link.hostname !== location.hostname) {
+                    e.preventDefault();
+                    lastFocus = document.activeElement;
+                    modalBackdrop.classList.add('active');
+                    modalVisit.href = link.href;
+                    modalVisit.focus();
+                }
+            });
+        });
+
+        // Close modal
+        function closeModal() {
+            modalBackdrop.classList.remove('active');
+            modalVisit.href = "#";
+            if (lastFocus) lastFocus.focus();
+        }
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', function(e) {
+            if (e.target === modalBackdrop) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (modalBackdrop.classList.contains('active') && (e.key === "Escape" || e.key === "Esc")) {
+                closeModal();
+            }
+        });
+    });
+</script>

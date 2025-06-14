@@ -20,4 +20,20 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = {
+  ...nextConfig,
+  webpack: (config: any, { isServer }: { isServer: boolean }) => {
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\.hbs$/,
+        use: {
+          loader: 'handlebars-loader',
+          options: {
+            // Add any handlebars-loader options here
+          }
+        }
+      });
+    }
+    return config;
+  },
+};
