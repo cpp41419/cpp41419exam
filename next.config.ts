@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  env: {
+    GTM_ID: process.env.GTM_ID,
+  },
 };
 
 module.exports = {

@@ -1,3 +1,5 @@
+import { config } from 'dotenv';
+config();
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
@@ -19,9 +21,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CPP41419 NSW Guide',
     description: 'Free downloadable handbook for real estate licensing in NSW.',
-    url: 'https://yourdomain.com',
+    url: 'https://answers.cpp41419.com.au',
     siteName: 'CPP41419 Guide',
-    images: [{ url: 'https://yourdomain.com/og-image.jpg' }],
+    images: [{ url: 'https://answers.cpp41419.com.au/og-image.jpg' }],
     locale: 'en_AU',
     type: 'website',
   },
@@ -34,6 +36,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV === 'production' && process.env.GTM_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', '${process.env.GTM_ID}');
+          `,
+            }}
+          />
+        )}
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
