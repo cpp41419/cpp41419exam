@@ -69,7 +69,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     );
   }
 
-  const followUpQuestionsList = await getFollowUpQuestions(question.question, question.answer);
+  const followUpQuestionsList: string[] = []; // await getFollowUpQuestions(question.question, question.answer);
 
   return (
     <div className="space-y-8">
