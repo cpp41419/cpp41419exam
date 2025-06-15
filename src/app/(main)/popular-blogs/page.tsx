@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,32 +20,34 @@ interface BlogPostCardProps {
   href?: string; // Optional link for the blog post
 }
 
-const BlogPostCard: React.FC<BlogPostCardProps> = ({ title, description, imageUrl, imageHint, href }) => (
-  <Card className="flex flex-col overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full">
-    <div className="relative w-full h-48">
-      <Image
-        src={imageUrl}
-        alt={title}
-        layout="fill"
-        objectFit="cover"
-        data-ai-hint={imageHint}
-      />
-    </div>
-    <CardHeader>
-      <CardTitle className="text-xl font-semibold">{title}</CardTitle>
-    </CardHeader>
-    <CardContent className="flex-grow">
-      <CardDescription className="text-sm line-clamp-3">{description}</CardDescription>
-    </CardContent>
-    <CardFooter>
-      <Button asChild variant="outline" className="w-full group">
-        <Link href={href || "#"} target={href ? "_blank" : "_self"} rel={href ? "noopener noreferrer" : ""}>
-          Read More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+export function BlogPostCard({ title, description, imageUrl, imageHint, href }: BlogPostCardProps) {
+  return (
+    <Card className="flex flex-col overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full">
+      <div className="relative w-full h-48">
+        <Image
+          src={imageUrl}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+          data-ai-hint={imageHint}
+        />
+      </div>
+      <CardHeader>
+        <CardTitle className="text-xl font-semibold">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex-grow">
+        <CardDescription className="text-sm line-clamp-3">{description}</CardDescription>
+      </CardContent>
+      <CardFooter>
+        <Button asChild variant="outline" className="w-full group">
+          <Link href={href || "#"} target={href ? "_blank" : "_self"} rel={href ? "noopener noreferrer" : ""}>
+            Read More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </Button>
     </CardFooter>
   </Card>
-);
+  );
+}
 
 export default function PopularBlogsPage() {
   const blogPosts = [

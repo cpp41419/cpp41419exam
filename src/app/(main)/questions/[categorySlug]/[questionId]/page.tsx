@@ -1,4 +1,3 @@
-
 import { getQuestionById, getQuestionsByCategory } from '@/data/questions';
 import { categories }  from '@/data/categories';
 import { QuestionDisplay } from '@/components/qa/QuestionDisplay';
@@ -48,9 +47,17 @@ async function getFollowUpQuestions(questionText: string, answerText: string) {
   }
 }
 
+import { useEffect } from 'react';
+
 export default async function QuestionPage({ params }: QuestionPageProps) {
   const question = getQuestionById(params.questionId);
   const category = categories.find(c => c.slug === params.categorySlug);
+
+  useEffect(() => {
+    if (question) {
+      console.log("Question data:", question);
+    }
+  }, [question]);
 
   if (!question || !category) {
     return (
@@ -73,12 +80,12 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
 
   return (
     <div className="space-y-8">
-      <Breadcrumbs 
+      <Breadcrumbs
         items={[
-          { label: 'Home', href: '/' }, 
+          { label: 'Home', href: '/' },
           { label: category.name, href: `/questions/${category.slug}` },
           { label: question.question.length > 50 ? question.question.substring(0, 50) + '...' : question.question }
-        ]} 
+        ]}
       />
       <QuestionDisplay question={question} />
 
@@ -107,6 +114,13 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
           <Link href={`/questions/${category.slug}`}>Back to {category.name}</Link>
         </Button>
       </div>
+
+      {category.questions.map((q) => (
+        <div key={q.id} className="mb-8">
+          <h2 className="font-bold">{q.question}</h2>
+          <p className="mt-2">{q.answer || <span className="text-red-500">No answer available.</span>}</p>
+        </div>
+      ))}
     </div>
   );
 }
