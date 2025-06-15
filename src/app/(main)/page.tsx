@@ -1,24 +1,57 @@
-import { getAllQuestions } from '@/data/questions';
-import BlogPostCard from '@/app/(main)/popular-blogs/page';
+import { categories } from '@/data/categories';
+import { CategoryCard } from '@/components/qa/CategoryCard';
+import type { Metadata } from 'next';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'CPP41419 Q&A Hub - Master Real Estate Practice',
+  description:
+    'Unlock CPP41419 mastery with authoritative answers and data-backed insights. Your comprehensive guide to the Certificate IV in Real Estate Practice.',
+  keywords: [
+    'CPP41419',
+    'Certificate IV',
+    'Real Estate Practice',
+    'Real Estate Course',
+    'Real Estate Licensing',
+    'Australia Property Education',
+    'FAQ',
+    'Authoritative Answers',
+    'Study Guide',
+  ],
+};
 
 const HomePage = () => {
-  const questions = getAllQuestions();
-
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">Frequently Asked Questions</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {questions.map((question) => (
-          <BlogPostCard
-            key={question.id}
-            title={question.question}
-            description={question.answer}
-            imageUrl="https://placehold.co/600x400.png"
-            imageHint="real estate question"
-            href={question.category ? `/questions/${question.category.toLowerCase().replace(/ /g, '-')}/${question.id}` : `/questions/${question.id}`}
-          />
+    <div className="space-y-10">
+      <header className="space-y-4 pb-8 border-b text-center">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+          Unlock CPP41419 Mastery: Your Authoritative Q&amp;A Hub
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          Gain data-backed insights and clear answers, ensuring you're fully prepared for the CPP41419 Certificate IV in Real Estate Practice. Don't just study – strategize your success with our comprehensive knowledge base.
+        </p>
+        <div className="pt-4">
+          <Button size="lg" className="rounded-full" asChild>
+            <Link
+              href={
+                categories.length > 0
+                  ? `/questions/${categories[0].slug}`
+                  : '/'
+              }
+            >
+              CPP41419 Answers
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </header>
+      <section className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {categories.map((category) => (
+          <CategoryCard key={category.slug} category={category} />
         ))}
-      </div>
+      </section>
     </div>
   );
 };

@@ -47,17 +47,9 @@ async function getFollowUpQuestions(questionText: string, answerText: string) {
   }
 }
 
-import { useEffect } from 'react';
-
 export default async function QuestionPage({ params }: QuestionPageProps) {
   const question = getQuestionById(params.questionId);
   const category = categories.find(c => c.slug === params.categorySlug);
-
-  useEffect(() => {
-    if (question) {
-      console.log("Question data:", question);
-    }
-  }, [question]);
 
   if (!question || !category) {
     return (
