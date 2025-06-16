@@ -486,7 +486,7 @@ export const questions: FAQQuestion[] = questionsData.map(q => ({
   id: generateId(),
 }));
 
-export const questionIds = questions.reduce((acc, question) => {
+export const questionIds = questions.reduce((acc: Record<string, string>, question) => {
   acc[question.question] = question.id;
   return acc;
 }, {});
