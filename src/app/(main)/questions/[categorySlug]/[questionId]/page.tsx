@@ -51,11 +51,18 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
   const question = getQuestionById(params.questionId);
   const category = categories.find(c => c.slug === params.categorySlug);
 
+  // Defensive logging for debugging
+  if (typeof console !== 'undefined') {
+    console.log('QuestionPage params:', params);
+    console.log('Resolved question:', question);
+    console.log('Resolved category:', category);
+  }
+
   if (!question || !category) {
     return (
-       <div className="text-center py-10">
-         <Alert variant="destructive" className="max-w-md mx-auto">
-          <AlertCircle className="h-4 w-4" /> {/* Changed Info to AlertCircle */}
+      <div className="text-center py-10">
+        <Alert variant="destructive" className="max-w-md mx-auto">
+          <AlertCircle className="h-4 w-4" />
           <AlertTitle>Content Not Found</AlertTitle>
           <AlertDescription>
             The question or category you are looking for does not exist or the URL is incorrect.
@@ -107,7 +114,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
         </Button>
       </div>
 
-      {category.questions.map((q) => (
+      {getQuestionsByCategory(category.slug).map((q) => (
         <div key={q.id} className="mb-8">
           <h2 className="font-bold">{q.question}</h2>
           <p className="mt-2">{q.answer || <span className="text-red-500">No answer available.</span>}</p>
