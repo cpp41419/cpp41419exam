@@ -495,7 +495,15 @@ export const questionIds = questions.reduce((acc, question) => {
 export function getQuestionsByCategory(categorySlug: string): FAQQuestion[] {
   const category = allDefinedCategories.find(c => c.slug === categorySlug);
   if (!category) return [];
-  return questions.filter(q => q.category === category.name).sort((a, b) => {
+  const filtered = questions.filter(q =>
+    q.category.trim().toLowerCase() === category.name.trim().toLowerCase()
+  );
+  if (filtered.length === 0) {
+    if (typeof console !== 'undefined') {
+      console.warn(`No questions found for category: '${category.name}' (slug: '${categorySlug}')`);
+    }
+  }
+  return filtered.sort((a, b) => {
     if (a.priority !== b.priority) {
       return a.priority - b.priority;
     }
