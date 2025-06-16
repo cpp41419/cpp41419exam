@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'CPP41419 NSW Guide - Free Real Estate License Handbook',
   description: 'Download your free guide to mastering CPP41419 Certificate IV in Real Estate Practice.',
   keywords: ['real estate regions Australia', 'become real estate agent Sydney', 'Melbourne property market', 'Brisbane real estate career', 'Perth agent requirements', 'regional real estate guide'],
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'CPP41419 NSW Guide',
     description: 'Free downloadable handbook for real estate licensing in NSW.',
