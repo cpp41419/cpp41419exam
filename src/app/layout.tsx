@@ -1,8 +1,10 @@
 import { config } from 'dotenv';
 config();
+import React from 'react';
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
+import styles from './layout.module.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -313,29 +315,165 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
-        {process.env.NODE_ENV === 'production' && process.env.GTM_ID && (
+      <body>
+        {children}
+        <React.Fragment>
           <script
-            dangerouslySetInnerHTML={{
-              __html: `
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          />
+        </React.Fragment>
+        {process.env.NODE_ENV === 'production' && process.env.GTM_ID && (
+          <React.Fragment>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer', '${process.env.GTM_ID}');
           `,
-            }}
-          />
+              }}
+            />
+          </React.Fragment>
         )}
         <link rel="canonical" href="https://answers.cpp41419.com.au" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <div style={{ marginTop: '20px', padding: '20px', borderTop: '1px solid #ccc' }}>
+          <p>Hey there! Just so you know...</p>
+          <p>answers.cpp41419.com.au is basically the nerdy little sibling of cpp41419.com.au - we're part of the same family!</p>
+          <p>Think of it like this:</p>
+          <ul>
+            <li>cpp41419.com.au is the main home base for the CPP41419 course</li>
+            <li>answers.cpp41419.com.au is where you come to get your real questions answered (no jargon, just straight talk)</li>
+          </ul>
+          <p>We share:</p>
+          <ul>
+            <li>✔ The same team behind the scenes</li>
+            <li>✔ The same commitment to keeping your info safe</li>
+            <li>✔ The same goal of helping you ace this course</li>
+          </ul>
+          <p>So whether you're browsing the main site or digging into our Q&A hub, you're in good hands. We've got your back!</p>
+          <p>The CPP41419 Crew</p>
+          <p>Powered by cpp41419.com.au</p>
+        </div>
       </body>
     </html>
   );
 }
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en">
+//       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+//         {children}
+//         <footer class="site-footer">
+//   <div class="footer-grid">
+    
+//     {/* CORE TOPICS COLUMN */}
+//     <div class="footer-column">
+//       <h3 class="footer-heading">CPP41419 Core Topics</h3>
+//       <ul class="footer-links">
+//         <li><a href="/questions/course-basics-enrollment">Course Basics & Enrollment</a></li>
+//         <li><a href="/questions/study-options-duration">Study Options & Duration</a></li>
+//         <li><a href="/questions/costs-payment">Costs & Payment Options</a></li>
+//         <li><a href="/questions/state-licensing-requirements">State Licensing</a></li>
+//         <li><a href="/questions/assessment-completion">Assessments</a></li>
+//       </ul>
+//     </div>
+    
+//     {/* CAREER COLUMN */}
+//     <div class="footer-column">
+//       <h3 class="footer-heading">Career Pathways</h3>
+//       <ul class="footer-links">
+//         <li><a href="/questions/career-employment">Career Opportunities</a></li>
+//         <li><a href="/guide#career-outcomes">Salary Expectations</a></li>
+//         <li><a href="/guide#industry-outlook">Industry Trends</a></li>
+//         <li><a href="/regional-guide">Regional Differences</a></li>
+//         <li><a href="/data-insights">Provider Insights</a></li>
+//       </ul>
+//     </div>
+    
+//     {/* RESOURCES COLUMN */}
+//     <div class="footer-column">
+//       <h3 class="footer-heading">Learning Resources</h3>
+//       <ul class="footer-links">
+//         <li><a href="/guide">Complete Course Guide</a></li>
+//         <li><a href="/popular-blogs">Expert Articles</a></li>
+//         <li><a href="/questions/technical-requirements">Tech Requirements</a></li>
+//         <li><a href="/questions/provider-selection">Choosing Providers</a></li>
+//         <li><a href="/questions/advanced-questions">Advanced Questions</a></li>
+//       </ul>
+//     </div>
+    
+//     {/* STATE SPECIFIC COLUMN */}
+//     <div class="footer-column">
+//       <h3 class="footer-heading">By State/Territory</h3>
+//       <ul class="footer-links">
+//         <li><a href="/questions/state-licensing-requirements/kn5zgf7xibammxot45mrek">NSW Requirements</a></li>
+//         <li><a href="/questions/state-licensing-requirements/7npsmjber0ibnabfprd8fo">VIC Requirements</a></li>
+//         <li><a href="/questions/state-licensing-requirements/1gyt3yb9gkjpbkqv0z04o">QLD Requirements</a></li>
+//         <li><a href="/questions/state-licensing-requirements/xu7d58x7aps1qcq78d3ywd">WA Requirements</a></li>
+//         <li><a href="/guide#state-requirements">All State Comparisons</a></li>
+//       </ul>
+//     </div>
+    
+//     {/* MEGA META COLUMN */}
+//     <div class="footer-column">
+//       <h3 class="footer-heading">Course Essentials</h3>
+//       <div class="footer-double-list">
+//         <ul>
+//           <li><a href="/guide#course-history">Course History</a></li>
+//           <li><a href="/guide#cost-breakdown">Fee Breakdown</a></li>
+//           <li><a href="/guide#provider-selection">RTO Comparison</a></li>
+//         </ul>
+//         <ul>
+//           <li><a href="/guide#getting-started">Getting Started</a></li>
+//           <li><a href="/guide#faq-guide">FAQs</a></li>
+//           <li><a href="/guide#related-resources">Textbooks</a></li>
+//         </ul>
+//       </div>
+//     </div>
+//   </div>
+  
+//   {/* DEEP SITEMAP TOGGLE */}
+//   <div class="footer-sitemap-toggle">
+//     <button class="sitemap-toggle" aria-expanded="false">Show Full Site Map +</button>
+//     <div class="full-sitemap hidden">
+//       {/* Dynamically generated full sitemap would go here */}
+//     </div>
+//   </div>
+  
+//   {/* LEGAL + SOCIAL */}
+//   <div class="footer-legal">
+//     <div class="legal-links">
+//       <a href="/privacy">Privacy Policy</a>
+//       <a href="/terms">Terms of Use</a>
+//       <span>© 2023 CPP41419 Q&A Hub</span>
+//     </div>
+//     <div class="social-links">
+//       <a href="#"><i class="icon-facebook"></i></a>
+//       <a href="#"><i class="icon-linkedin"></i></a>
+//       <a href="#"><i class="icon-twitter"></i></a>
+//     </div>
+//   </div>
+// </footer>
+// <script>
+//   // Toggle full sitemap
+//   document.querySelector('.sitemap-toggle').addEventListener('click', function() {
+//     const sitemap = document.querySelector('.full-sitemap');
+//     const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    
+//     sitemap.classList.toggle('hidden');
+//     this.setAttribute('aria-expanded', !isExpanded);
+//     this.textContent = isExpanded ? 'Show Full Site Map +' : 'Hide Site Map -';
+//   });
+// </script>
+//       </body>
+//     </html>
+//   );
+// }
