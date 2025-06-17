@@ -1,5 +1,5 @@
 import { getQuestionById, getQuestionsByCategory } from '@/data/questions';
-import { categories }  from '@/data/categories';
+import { categories } from '@/data/categories';
 import { QuestionDisplay } from '@/components/qa/QuestionDisplay';
 import { Breadcrumbs } from '@/components/core/Breadcrumbs';
 import type { Metadata } from 'next';
@@ -16,9 +16,11 @@ interface QuestionPageProps {
 
 export async function generateMetadata({ params }: QuestionPageProps): Promise<Metadata> {
   const question = getQuestionById(params.questionId);
-  const title = question ? `${question.question.substring(0, 60)}... | CPP41419 Q&A` : 'Question | CPP41419 Q&A';
+  const category = categories.find(c => c.slug === params.categorySlug);
+  const title = question ? `${question.question.substring(0, 60)}... - ${category?.name} | CPP41419 Q&A` : 'Question | CPP41419 Q&A';
   const description = question ? question.answer.substring(0, 150) + '...' : 'View question and answer details for CPP41419.';
   const keywords = question ? question.keywords.join(', ') : 'real estate question, cpp41419 details';
+  
   return { title, description, keywords };
 }
 

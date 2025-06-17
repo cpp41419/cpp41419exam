@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { ArrowRight, HelpCircle } from 'lucide-react'; 
 import type { Category } from '@/types';
+import { categories } from '@/data/categories';
 
 interface CategoryCardProps {
   category: Category;
@@ -10,7 +11,11 @@ interface CategoryCardProps {
 export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link href={`/questions/${category.slug}`} className="group block h-full">
-      <Card className="h-full flex flex-col hover:border-primary/50 hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden"> {/* Increased rounding and shadow */}
+      <Card className={`h-full flex flex-col hover:border-primary/50 hover:shadow-2xl transition-all duration-300 rounded-xl overflow-hidden ${
+                ['bg-blue-50', 'bg-green-50', 'bg-yellow-50'][
+                  categories.findIndex((c) => c.slug === category.slug) % 3
+                ]
+              }`}> {/* Increased rounding and shadow */}
         <CardHeader className="pb-4">
           <div className="flex items-center gap-3 mb-2">
             <span className="p-3 bg-primary/10 text-primary rounded-lg"> {/* Adjusted padding & rounding */}

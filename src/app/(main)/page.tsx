@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const HomePage = () => {
   return (
     <div className="space-y-10">
-      <header className="space-y-4 pb-8 border-b text-center">
+      <header className="space-y-4 pb-8 border-b text-center bg-gradient-to-br from-blue-50 to-white">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
           Unlock CPP41419 Mastery: Your Authoritative Q&amp;A Hub
         </h1>
