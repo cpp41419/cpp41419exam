@@ -331,6 +331,7 @@ export default function RootLayout({
             }}
           />
         )}
+        <link rel="canonical" href="https://answers.cpp41419.com.au" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
